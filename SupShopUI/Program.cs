@@ -1,71 +1,75 @@
 ﻿using System;
 
+
 namespace SupShopUI
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Store");
+            bool repeat = true;
 
-            int action = initialMessage();
+            IStoreFront page = new StoreFront();
 
-            while (action != 0)
+            while (repeat)
             {
-                Console.WriteLine("you chose " + action);
-                switch(action)
+                //This will clear the termanel
+                Console.Clear();
+
+                page.Display();
+                DirectoryChoice currentPage = page.YourChoice();
+
+                switch(currentPage)
                 {
-                    case 1:
-                    Console.WriteLine("You Picked 1");
-                    string itemName = "";
-                    Decimal itemPrice = 0;
-                    int itemQuanity = 0;
+                    case DirectoryChoice.StoreFloor:
+
+                    page = new StoreFloor();
+                    break;
 
 
-                    Console.WriteLine("What is the supply item?");
+                    case DirectoryChoice.MainInventory:
+                    page = new MainInventory();
+                    break;
+
+
+                    //exit the store 
+                    case DirectoryChoice.Exit:
+
+                    Console.WriteLine("Thank you for visiting the Store");
+                    Console.WriteLine("You are exiting the application");
+                    Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
-                    Console.WriteLine();
+                    repeat = false;
+                    break;
 
-                    Console.WriteLine("What is the item price?");
-                    Console.ReadLine();
-                    Console.WriteLine();
-
-                    Console.WriteLine("How many are in stock?");
-                    try{
-                        int.Parse(Console.ReadLine());
-                    }
-                    catch{
-                        Console.WriteLine("Please enter in a digit");
-                    }
+                    default: 
+                    Console.WriteLine("You forgot to add a page that should be here");
+                    repeat = false;
+                    break;
                 }
-                break
 
 
 
 
 
 
-                action = initialMessage();
             }
-            
-        }
 
-        static public int initialMessage()
-        {
-            int choice = 0;
-            Console.WriteLine("Choose: [0] to exit, [1] to update inventory, [2] to make a purchase.");
-           
-           try{
-                choice = int.Parse(Console.ReadLine()); 
-           }
-           catch{
-              Console.WriteLine("please enter an int");
-           }
-             
-           
-           
-           return choice;
+
+
+
+
+
+
+
         }
+        }
+        }
+            
         
-    }
-}
+
+        
+        
+        
+    
+

@@ -2,13 +2,11 @@ using System;
 
 namespace SupShopUI
 {
-    public class MainInventory : IStoreFront
+    public class StoreFloor : IStoreFront
     {
-     
-
         public void Display()
         {
-            Console.WriteLine("Welcome to the inventory shelf");
+            Console.WriteLine("Welcome to the store floor");
             Console.WriteLine("Please choose what you want to do");
             Console.WriteLine("See what is in stock [1]");
             Console.WriteLine("Go back to the main menu [2]");
@@ -21,9 +19,9 @@ namespace SupShopUI
             {
                 case "1":
                 //this will return inventory and do something
-                    return DirectoryChoice.MainInventory;
-                case "2":
                     return DirectoryChoice.StoreFloor;
+                case "2":
+                    return DirectoryChoice.StoreFront;
                 case "0":
                     return DirectoryChoice.Exit;
                     default:

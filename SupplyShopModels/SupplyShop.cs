@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SupplyShop
+namespace SupplyShopModels
 {
     public class SupplyShop
     {
@@ -12,6 +12,7 @@ namespace SupplyShop
 
         public bool inStock { get; set; }
 
+        
         
 
 

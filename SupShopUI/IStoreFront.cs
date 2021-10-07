@@ -4,7 +4,9 @@ namespace SupShopUI
     {
         MainInventory,
         StoreFloor,
-        Exit
+        Exit,
+
+        StoreFront
     }
 
     public interface IStoreFront
