@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SupplyShop\SupplyShop.csproj" />
+    <ProjectReference Include="..\SupplyShopModels\SupplyShop.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

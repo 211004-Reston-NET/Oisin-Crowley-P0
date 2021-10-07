@@ -1,9 +1,9 @@
 using System;
-using SupShopUI;
+
 
 namespace SupplyShopModels
 {
-    public class Customers
+    public class Orders
     {
 
         //fields for Order information 

@@ -6,6 +6,8 @@ namespace SupShopUI
         StoreFloor,
         Exit,
 
+        EnterInventory,
+
         StoreFront
     }
 
