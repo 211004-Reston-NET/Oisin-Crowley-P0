@@ -31,6 +31,11 @@ namespace SupShopUI
                     page = new MainInventory();
                     break;
 
+                    
+
+                    case DirectoryChoice.StoreFront:
+                    page = new StoreFront();
+                    break;
 
                     //exit the store 
                     case DirectoryChoice.Exit:

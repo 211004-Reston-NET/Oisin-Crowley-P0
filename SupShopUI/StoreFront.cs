@@ -10,7 +10,7 @@ namespace SupShopUI
         {
             Console.WriteLine("Welcome to the Supply Store");
             Console.WriteLine("What do you want to do?");
-            Console.WriteLine("1 - Enter the Store");
+            Console.WriteLine("[1] - Enter the Store");
             Console.WriteLine("[2] Handle inventory");
             Console.WriteLine("0 - Exit the Store");
         }

@@ -12,6 +12,7 @@ namespace SupShopUI
             Console.WriteLine("Please choose what you want to do");
             Console.WriteLine("See what is in stock [1]");
             Console.WriteLine("Go back to the main menu [2]");
+            Console.WriteLine("Go to the front of the shop and see what is on sale? [3]");
             Console.WriteLine("Exit appliction [0]");
         }
         public DirectoryChoice YourChoice()
@@ -23,6 +24,8 @@ namespace SupShopUI
                 //this will return inventory and do something
                     return DirectoryChoice.MainInventory;
                 case "2":
+                    return DirectoryChoice.StoreFront;
+                case "3":
                     return DirectoryChoice.StoreFloor;
                 case "0":
                     return DirectoryChoice.Exit;
