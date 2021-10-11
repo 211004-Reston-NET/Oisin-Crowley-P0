@@ -46,7 +46,7 @@ namespace SupShopUI
             int itemPrice = 0;
             int itemQuantity = 0;
             Console.WriteLine("Please enter the inventory to be stocked.");
-            SupplyShop supplyShop = new SupplyShop();
+            Items newItem = new Items();
             bool repeat = true;
             while (repeat)
             {
@@ -55,6 +55,11 @@ namespace SupShopUI
                     case "1":
 
                 Console.Clear();
+
+                ///
+                ///this is asking for the items to be entered into 
+                /// for inventory managment toDO a printinventory()
+                /// /// 
                 Console.WriteLine("What is the item name?");
                 itemName = Console.ReadLine();
 
@@ -64,9 +69,14 @@ namespace SupShopUI
                 Console.WriteLine("How many are in stock?");
                 itemQuantity = int.Parse(Console.ReadLine());
 
-                SupplyShop newItem = new SupplyShop(itemName,itemPrice,itemQuantity);
+                SupplyShop Items = new SupplyShop(itemName,itemPrice,itemQuantity);
                 
                 break;
+
+
+
+
+
 }
 
 
