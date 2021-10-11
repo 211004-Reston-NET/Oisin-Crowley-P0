@@ -7,14 +7,15 @@ namespace SupplyShopModels
     {
 
         //fields for Order information 
-        
+        public int OrderId { get; set; }
         public string itemName { get; set; }
 
-        public int itemAmount { get; set; }
+        public int itemQuanity {get ; set;}
+        public decimal totalPrice { get; set; } 
 
-        public decimal purchasePrice { get; set; }    
+        public string storeLocation { get; set; }   
         
-        public decimal totalPrice { get; set; }
+        
 
         
     }

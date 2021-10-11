@@ -6,6 +6,8 @@ namespace SupShopUI
 {
     public class EnterInventory : IStoreFront
     {
+        public static object printInventory { get; private set; }
+
         public void Display()
         {
             Console.WriteLine("Welcome to the Inventory floor");
@@ -21,7 +23,7 @@ namespace SupShopUI
             {
                 case "1":
                 //this will return inventory and do something
-                    return DirectoryChoice.StoreFloor;
+                    return StockShelves();
                 case "2":
                     return DirectoryChoice.StoreFront;
                 case "0":
@@ -38,19 +40,20 @@ namespace SupShopUI
             }
         }
 
-        static void StockShelves()
+        public static StockShelves()
         {
-
+            string userChoice = Console.ReadLine();
 
             string itemName = "";
             int itemPrice = 0;
             int itemQuantity = 0;
-            Console.WriteLine("Please enter the inventory to be stocked.");
-            Items newItem = new Items();
+            Console.WriteLine("Please enter the inventory to be stocked.[1]");
+            Console.WriteLine("Or [2] to exit ");
+         Items newItem = new Items();
             bool repeat = true;
             while (repeat)
             {
-                switch(repeat)
+                switch(userChoice)
                 {
                     case "1":
 
@@ -72,6 +75,15 @@ namespace SupShopUI
                 SupplyShop Items = new SupplyShop(itemName,itemPrice,itemQuantity);
                 
                 break;
+                case "2":
+                    return DirectoryChoice.EnterInventory;
+                 default : 
+                Console.WriteLine("you forgot something");
+                repeat = false;
+                break;
+                
+                 
+                
 
 
 

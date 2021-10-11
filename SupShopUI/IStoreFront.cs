@@ -5,7 +5,7 @@ namespace SupShopUI
         MainInventory,
         StoreFloor,
         Exit,
-
+        EnterCustomerInfo,
         EnterInventory,
 
         StoreFront
