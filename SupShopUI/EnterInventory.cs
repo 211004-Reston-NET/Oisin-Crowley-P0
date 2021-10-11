@@ -50,6 +50,10 @@ namespace SupShopUI
             bool repeat = true;
             while (repeat)
             {
+                switch(repeat)
+                {
+                    case "1":
+
                 Console.Clear();
                 Console.WriteLine("What is the item name?");
                 itemName = Console.ReadLine();
@@ -60,10 +64,10 @@ namespace SupShopUI
                 Console.WriteLine("How many are in stock?");
                 itemQuantity = int.Parse(Console.ReadLine());
 
+                SupplyShop newItem = new SupplyShop(itemName,itemPrice,itemQuantity);
                 
-                
-
-
+                break;
+}
 
 
 
@@ -71,5 +75,7 @@ namespace SupShopUI
 
             
         }
+
+      
     }
 }

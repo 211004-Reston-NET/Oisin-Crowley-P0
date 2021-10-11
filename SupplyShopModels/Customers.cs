@@ -17,5 +17,7 @@ namespace SupplyShopModels
         public string state { get; set; }
 
         
+
+        
     }
 }
