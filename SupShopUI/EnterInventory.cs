@@ -23,7 +23,7 @@ namespace SupShopUI
             {
                 case "1":
                 //this will return inventory and do something
-                    return StockShelves();
+                 //  return StockShelves();
                 case "2":
                     return DirectoryChoice.StoreFront;
                 case "0":
@@ -40,7 +40,7 @@ namespace SupShopUI
             }
         }
 
-        public static StockShelves()
+        private void StockShelves()
         {
             string userChoice = Console.ReadLine();
 
@@ -76,7 +76,7 @@ namespace SupShopUI
                 
                 break;
                 case "2":
-                    return DirectoryChoice.EnterInventory;
+                  //  return DirectoryChoice.EnterInventory;
                  default : 
                 Console.WriteLine("you forgot something");
                 repeat = false;

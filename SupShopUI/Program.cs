@@ -30,7 +30,9 @@ namespace SupShopUI
                     case DirectoryChoice.MainInventory:
                     page = new MainInventory();
                     break;
-
+                    case DirectoryChoice.NewCustomer:
+                    page = new NewCustomer();
+                    break;
                     
 
                     case DirectoryChoice.StoreFront:

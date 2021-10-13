@@ -2,12 +2,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SupplyShop\SupplyShop.csproj" />
-    <ProjectReference Include="..\SupplyShop\SupplyShop.csproj" />
-    <ProjectReference Include="..\SupplyShopBL\SupplyShopBL.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
