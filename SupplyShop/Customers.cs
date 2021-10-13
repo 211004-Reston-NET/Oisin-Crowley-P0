@@ -36,7 +36,7 @@ namespace SupplyShopModels
             }
         }
 
-     //   public List<Orders> OrderList {get; set;}
+       public List<Orders> OrderList {get; set;}
         
 
         

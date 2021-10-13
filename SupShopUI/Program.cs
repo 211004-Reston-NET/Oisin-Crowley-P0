@@ -1,4 +1,6 @@
 ﻿using System;
+using SupplyShopBL;
+using SupplyShopDL;
 
 
 namespace SupShopUI
@@ -30,8 +32,9 @@ namespace SupShopUI
                     case DirectoryChoice.MainInventory:
                     page = new MainInventory();
                     break;
+
                     case DirectoryChoice.NewCustomer:
-                    page = new NewCustomer();
+                    page = new NewCustomer(new CustomersBL(new Repository()));
                     break;
                     
 

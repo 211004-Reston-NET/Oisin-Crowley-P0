@@ -72,7 +72,7 @@ namespace SupShopUI
                 Console.WriteLine("How many are in stock?");
                 itemQuantity = int.Parse(Console.ReadLine());
 
-                SupplyShop Items = new SupplyShop(itemName,itemPrice,itemQuantity);
+               // SupplyShop Items = new SupplyShop(itemName,itemPrice,itemQuantity);
                 
                 break;
                 case "2":

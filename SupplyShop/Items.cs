@@ -13,22 +13,7 @@ namespace SupplyShopModels
         public string itemName {get; set;}
 
 
-        public Items ()
-        {
-            itemQuanity = 0;
-            itemPrice = 0;
-            itemName = "Nothing yet";
-
-           
-
-        }
-
-        public Items(string a,int b, int c)
-        {
-            itemName = a;
-            itemPrice = b;
-            itemQuanity = c;
-        }
+      
 
 
 }

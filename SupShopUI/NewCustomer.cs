@@ -10,15 +10,17 @@ namespace SupShopUI
         private ICustomersBL _custBL;
 
 
-        public AddCustomer(ICustomersBL p_custBL)
+        public NewCustomer(ICustomersBL p_custBL)
         {
             _custBL = p_custBL;
-        } 
+
+
+        }
 
         public void Display()
         {
 
-            Console.WriteLine("Adding a new customer")
+            Console.WriteLine("Adding a new customer");
             Console.WriteLine("Name " + _cust.Name);
             Console.WriteLine("City " + _cust.City);
             Console.WriteLine("State " + _cust.State);
@@ -29,15 +31,20 @@ namespace SupShopUI
             Console.WriteLine("[3] To enter the State.");
             Console.WriteLine("[4] to enter the phone number.");
             Console.WriteLine("[5] to enter the email.");
+            Console.WriteLine("[0] to return to store front");
         }
         public DirectoryChoice YourChoice()
         {
             string userChoice = Console.ReadLine();
             switch (userChoice)
             {
+                /// <summary>
+                /// gathering input of the new customers
+                /// </summary>
+                /// <returns></returns>
                 case "1":
-                //this will return inventory and do something
-                    Console.WriteLine("Enter the name" );
+
+                    Console.WriteLine("Enter the name");
                     _cust.Name = Console.ReadLine();
                     return DirectoryChoice.NewCustomer;
                 case "2":
@@ -49,33 +56,32 @@ namespace SupShopUI
                     _cust.State = Console.ReadLine();
                     return DirectoryChoice.NewCustomer;
                 case "4":
-                       Console.WriteLine("Enter the Phone Number");
+                    Console.WriteLine("Enter the Phone Number");
                     _cust.Phone = Console.ReadLine();
                     return DirectoryChoice.NewCustomer;
-                    case "5":
-                       Console.WriteLine("Enter the Email");
-                    _cust.Phone = Console.ReadLine();
+                case "5":
+                    Console.WriteLine("Enter the Email");
+                    _cust.Email = Console.ReadLine();
                     return DirectoryChoice.NewCustomer;
                 case "0":
                     return DirectoryChoice.StoreFront;
-                    default:
+                default:
                     Console.WriteLine("Please enter a valid choice");
                     Console.WriteLine("Press enter to continue");
                     Console.ReadLine();
                     return DirectoryChoice.StoreFront;
-                
-                   
+
+
 
 
             }
         }
 
-        
 
-            
 
-            
 
-        }
+
+
+
     }
 }

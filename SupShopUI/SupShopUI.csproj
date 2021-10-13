@@ -4,6 +4,7 @@
     <ProjectReference Include="..\SupplyShop\SupplyShop.csproj" />
     <ProjectReference Include="..\SupplyShop\SupplyShop.csproj" />
     <ProjectReference Include="..\SupplyShopBL\SupplyShopBL.csproj" />
+    <ProjectReference Include="..\SupplyShopDL\SupplyShopDL.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

@@ -9,10 +9,10 @@ namespace SupplyShopBL
     public class CustomersBL : ICustomersBL
     {
 
-            private IRepository _repo;
+            private Repository _repo;
 
-                //passing the  repo object 
-            public CustomersBL(IRepository p_repo)
+                //passing the  repo object p_repo
+            public CustomersBL(Repository p_repo)
             {
 
                 //setting private repository to pub
