@@ -6,7 +6,7 @@ namespace SupShopUI
 {
     public class EnterInventory : IStoreFront
     {
-        public static object printInventory { get; private set; }
+       
 
         public void Display()
         {
@@ -40,56 +40,7 @@ namespace SupShopUI
             }
         }
 
-        private void StockShelves()
-        {
-            string userChoice = Console.ReadLine();
-
-            string itemName = "";
-            int itemPrice = 0;
-            int itemQuantity = 0;
-            Console.WriteLine("Please enter the inventory to be stocked.[1]");
-            Console.WriteLine("Or [2] to exit ");
-         Items newItem = new Items();
-            bool repeat = true;
-            while (repeat)
-            {
-                switch(userChoice)
-                {
-                    case "1":
-
-                Console.Clear();
-
-                ///
-                ///this is asking for the items to be entered into 
-                /// for inventory managment toDO a printinventory()
-                /// /// 
-                Console.WriteLine("What is the item name?");
-                itemName = Console.ReadLine();
-
-                Console.WriteLine("How much is the item?");
-                itemPrice = int.Parse(Console.ReadLine());
-
-                Console.WriteLine("How many are in stock?");
-                itemQuantity = int.Parse(Console.ReadLine());
-
-               // SupplyShop Items = new SupplyShop(itemName,itemPrice,itemQuantity);
-                
-                break;
-                case "2":
-                  //  return DirectoryChoice.EnterInventory;
-                 default : 
-                Console.WriteLine("you forgot something");
-                repeat = false;
-                break;
-                
-                 
-                
-
-
-
-
-
-}
+       
 
 
 
@@ -99,5 +50,4 @@ namespace SupShopUI
         }
 
       
-    }
-}
+    

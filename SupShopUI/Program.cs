@@ -37,6 +37,9 @@ namespace SupShopUI
                     page = new NewCustomer(new CustomersBL(new Repository()));
                     break;
                     
+                    case DirectoryChoice.ShowCustomers:
+                    page = new ShowCustomers(new CustomersBL(new Repository()));
+                    break;
 
                     case DirectoryChoice.StoreFront:
                     page = new StoreFront();

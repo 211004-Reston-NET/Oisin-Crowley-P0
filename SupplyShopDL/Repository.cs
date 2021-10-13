@@ -41,7 +41,13 @@ namespace  SupplyShopDL
             // parameter being fed in is p_store
         public StoreFront AddStoreFront(StoreFront p_store)
         {
-                
+                List<StoreFront> listofStores = GetStoreFronts();
+
+                listofStores.Add (p_store);
+
+             _jsonString = JsonSerializer.Serialize(listofStores, new JsonSerializerOptions{WriteIndented = true});
+
+             return p_store;
         }
         
         //getting all store fronts        
