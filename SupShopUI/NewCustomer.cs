@@ -31,7 +31,11 @@ namespace SupShopUI
             Console.WriteLine("[3] To enter the State.");
             Console.WriteLine("[4] to enter the phone number.");
             Console.WriteLine("[5] to enter the email.");
+            Console.WriteLine("[6] Save Customer.");
             Console.WriteLine("[0] to return to store front");
+
+
+
         }
         public DirectoryChoice YourChoice()
         {
@@ -62,6 +66,9 @@ namespace SupShopUI
                 case "5":
                     Console.WriteLine("Enter the Email");
                     _cust.Email = Console.ReadLine();
+                    return DirectoryChoice.NewCustomer;
+                case "6":
+                    _custBL.AddCustomer(_cust);
                     return DirectoryChoice.NewCustomer;
                 case "0":
                     return DirectoryChoice.StoreFront;

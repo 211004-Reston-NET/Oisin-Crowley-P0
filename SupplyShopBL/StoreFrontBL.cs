@@ -8,8 +8,15 @@ namespace SupplyShopBL
 {
     public class StoreFrontBL 
     {
+        /// <summary>
+        /// repository init to _repo 
+        /// </summary>
         private Repository _repo;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_repo">param of p_repo from _repo</param>
         public StoreFrontBL(Repository p_repo)
         {
             _repo = p_repo;
