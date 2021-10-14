@@ -11,6 +11,8 @@ namespace  SupplyShopDL
         private const string _filepath ="./../SupplyShopDL/Database/Customers.json";
         private const string _SfFilepath ="./../SupplyShopDL/Database/StoreFront.json";
 
+        private const string _ItFilepath ="./../SupplyShopDL/Database/Items.json";
+
         private string _jsonString;
 
         public Customers AddCustomer(Customers p_cust)
@@ -56,6 +58,26 @@ namespace  SupplyShopDL
             _jsonString = File.ReadAllText(_SfFilepath);
 
             return JsonSerializer.Deserialize<List<StoreFront>>(_jsonString);
+        }
+
+
+        public Items AddItems(Items p_items)
+        {
+                List<Items> listofItems = GetAllItems();
+
+                listofItems.Add (p_items);
+
+             _jsonString = JsonSerializer.Serialize(listofItems, new JsonSerializerOptions{WriteIndented = true});
+
+             return p_items;
+        }
+        
+        //getting all store fronts        
+        public List<Items> GetAllItems()
+        {
+            _jsonString = File.ReadAllText(_ItFilepath);
+
+            return JsonSerializer.Deserialize<List<Items>>(_jsonString);
         }
     }
 }

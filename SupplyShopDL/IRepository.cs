@@ -14,5 +14,10 @@ namespace SupplyShopDL
         Customers AddCustomer(Customers p_cust);
 
         List<Customers> GetAllCustomers();
+
+
+        Items AddItems(Items p_items);
+
+        List<Items> GetAllItems();
     }
 }

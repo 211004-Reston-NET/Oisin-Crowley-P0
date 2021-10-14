@@ -30,7 +30,7 @@ namespace SupShopUI
 
 
                     case DirectoryChoice.MainInventory:
-                    page = new MainInventory();
+                    page = new MainInventory(new ItemsBL(new Repository()));
                     break;
 
                     case DirectoryChoice.NewCustomer:
