@@ -8,6 +8,8 @@ namespace SupShopUI
         NewCustomer,
         EnterInventory,
 
+        ShowProduct,
+
         ShowCustomers,
 
         StoreFront

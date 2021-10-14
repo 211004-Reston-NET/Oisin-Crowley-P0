@@ -69,6 +69,8 @@ namespace  SupplyShopDL
 
              _jsonString = JsonSerializer.Serialize(listofItems, new JsonSerializerOptions{WriteIndented = true});
 
+             File.WriteAllText(_ItFilepath,_jsonString);
+
              return p_items;
         }
         

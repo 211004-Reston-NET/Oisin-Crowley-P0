@@ -13,6 +13,7 @@ namespace SupShopUI
             Console.WriteLine("[1] - Enter the Store");
             Console.WriteLine("[2] Handle inventory");
             Console.WriteLine("[3] Enter Customer Information");
+            Console.WriteLine("[4] View Products.");
             Console.WriteLine("0 - Exit the Store");
         }
 
@@ -28,6 +29,8 @@ namespace SupShopUI
                 return DirectoryChoice.MainInventory;
                 case "3":
                 return DirectoryChoice.NewCustomer;
+                case "4":
+                return DirectoryChoice.ShowProduct;
                 case "0":
                 return DirectoryChoice.Exit;
                 default:

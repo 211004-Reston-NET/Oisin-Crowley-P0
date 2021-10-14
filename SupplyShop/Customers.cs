@@ -36,8 +36,19 @@ namespace SupplyShopModels
             }
         }
 
-       public List<Orders> OrderList {get; set;}
+//       public List<Orders> OrderList {get; set;}
         
+
+          public override string ToString()
+        {
+            string Items = $@"{Name}
+{City}
+{State}
+{Email}
+{Phone}";
+            return Items;     
+            
+            }
 
         
     }
