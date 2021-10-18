@@ -1,7 +1,7 @@
 ﻿using System;
 using SupplyShopBL;
 using SupplyShopDL;
-
+using SupShopUi;
 
 namespace SupShopUI
 {
@@ -42,6 +42,9 @@ namespace SupShopUI
                     break;
                     case DirectoryChoice.ShowProduct:
                     page = new ShowProduct(new ItemsBL(new Repository()));
+                    break;
+                    case DirectoryChoice.SearchCustomer:
+                    page = new SearchCustomer(new CustomersBL(new Repository()));
                     break;
 
                     case DirectoryChoice.StoreFront:

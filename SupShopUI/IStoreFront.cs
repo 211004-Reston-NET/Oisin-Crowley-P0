@@ -2,16 +2,25 @@ namespace SupShopUI
 {
     public enum DirectoryChoice
     {
-        MainInventory,
-        StoreFloor,
-        Exit,
-        NewCustomer,
-        EnterInventory,
+       
 
+       //showing store location choices
+        StoreFloor,
+        //close application
+        Exit,
+
+        //product and inventory
+        MainInventory,
+        EnterInventory,
+       
         ShowProduct,
 
-        ShowCustomers,
 
+        //customer choices 
+         NewCustomer,
+        SearchCustomer,
+        ShowCustomers,
+        //initial page
         StoreFront
     }
 

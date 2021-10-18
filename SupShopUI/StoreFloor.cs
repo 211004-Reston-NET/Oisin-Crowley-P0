@@ -22,7 +22,7 @@ namespace SupShopUI
             {
                 case "1":
                 //this will return inventory and do something
-                    return DirectoryChoice.StoreFloor;
+                    return DirectoryChoice.ShowProduct;
                 case "2":
                     return DirectoryChoice.StoreFront;
                 case "0":

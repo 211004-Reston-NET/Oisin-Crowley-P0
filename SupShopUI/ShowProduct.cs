@@ -40,6 +40,8 @@ namespace SupShopUI
                 Console.WriteLine("Press Enter to Continue");
                 Console.ReadLine();
                 return DirectoryChoice.ShowCustomers;
+              
+
             }
         }
     }

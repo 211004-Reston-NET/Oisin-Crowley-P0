@@ -7,14 +7,14 @@ using System.IO;
 namespace SupplyShopBL
 
 {
-    public class CustomerSearchBL
+    public class SearchCustomerBL
     {
 
         Repository SearchItem = new Repository(); 
         private Repository _repo;
 
         //passing the  repo object p_repo
-        public CustomerSearchBL(Repository p_repo)
+        public SearchCustomerBL(Repository p_repo)
         {
 
             //setting private repository to pub
@@ -32,11 +32,6 @@ namespace SupplyShopBL
             return listOfCustomers;
         }
 
-        public void SearchCustomer()
-        {       
-            
-                
-                
-        }
+       
     }
 }
