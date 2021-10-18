@@ -13,6 +13,8 @@ namespace  SupplyShopDL
 
         private const string _ItFilepath ="./../SupplyShopDL/Database/Items.json";
 
+        private const string _Ofilepath ="./../SupplyShopDL/Database/Orders.json";
+
         private string _jsonString;
 
         public Customers AddCustomer(Customers p_cust)
@@ -60,7 +62,7 @@ namespace  SupplyShopDL
             return JsonSerializer.Deserialize<List<StoreFront>>(_jsonString);
         }
 
-
+            // add Items
         public Items AddItems(Items p_items)
         {
                 List<Items> listofItems = GetAllItems();
@@ -74,12 +76,31 @@ namespace  SupplyShopDL
              return p_items;
         }
         
-        //getting all store fronts        
+        //getting all Items        
         public List<Items> GetAllItems()
         {
             _jsonString = File.ReadAllText(_ItFilepath);
 
             return JsonSerializer.Deserialize<List<Items>>(_jsonString);
+        }
+
+         public Orders AddOrders(Orders p_orders)
+        {
+                List<Orders> listofOrders = GetAllOrders();
+
+                listofOrders.Add (p_orders);
+
+             _jsonString = JsonSerializer.Serialize(listofOrders, new JsonSerializerOptions{WriteIndented = true});
+
+             File.WriteAllText(_Ofilepath,_jsonString);
+
+             return p_orders;
+        }
+        public List<Orders> GetAllOrders()
+        {
+            _jsonString = File.ReadAllText(_Ofilepath);
+
+            return JsonSerializer.Deserialize<List<Orders>>(_jsonString);
         }
     }
 }
