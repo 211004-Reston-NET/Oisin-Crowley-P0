@@ -10,13 +10,38 @@ namespace SupplyShopModels
 
         //fields for customer information 
        // public int CustomerID {get; set;}
-        public string Name { get; set;}
+       private string _name;
+       public string Name
+       {
+           get { return _name; }
+           set { _name = value; }
+       }
+       
+        private string _city;
+        public string City
+        {
+            get { return _city; }
+            set { _city = value; }
+        }
+     
 
-        public string City { get; set; }    
+        private string _state;
+        public string State
+        {
+            get { return _state; }
+            set { _state = value; }
+        }
+          
         
-        public string State { get; set; }
+        private string _email;
+        public string Email
+        {
+            get { return _email; }
+            set { _email = value; }
+        }
+        
 
-        public string Email { get; set; }
+        
 
         private string _phone;
 
