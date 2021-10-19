@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using SupplyShopModels; 
 using SupplyShopDL;
-
+using System.Linq;
 
 namespace SupplyShopBL
 {
@@ -35,10 +35,18 @@ namespace SupplyShopBL
 
                 return listOfCustomers;
             }
+            /// <summary>
+            /// this is getting the customer for the search we're carrying out for the customer
+            /// </summary>
+            /// <param name="p_Name"> passing the parameter of the name to search for. </param>
+            /// <returns></returns>
+            public List<Customers> GetCustomers(string p_Name)
+            {
+                List<Customers>listOfCustomers = _repo.GetAllCustomers();
 
-            
+                return listOfCustomers.Where(cust => cust.Name.ToUpper().Contains(p_Name.ToUpper())).ToList();
+            }
 
-
-
+        
     }
 }

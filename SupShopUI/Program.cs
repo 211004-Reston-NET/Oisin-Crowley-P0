@@ -46,6 +46,9 @@ namespace SupShopUI
                     case DirectoryChoice.SearchCustomer:
                     page = new SearchCustomer(new CustomersBL(new Repository()));
                     break;
+                    case DirectoryChoice.SearchResult:
+                    page = new SearchResult(new CustomersBL(new Repository()));
+                    break;
 
                     case DirectoryChoice.StoreFront:
                     page = new StoreFront();

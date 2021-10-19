@@ -66,12 +66,12 @@ namespace SupplyShopModels
 
           public override string ToString()
         {
-            string Items = $@"{Name}
-{City}
-{State}
-{Email}
-{Phone}";
-            return Items;     
+            string Customers = $@"Name: {Name}
+City: {City}
+State: {State}
+Email : {Email}
+Phone : {Phone}";
+            return Customers;     
             
             }
 

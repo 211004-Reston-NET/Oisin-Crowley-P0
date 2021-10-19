@@ -39,10 +39,10 @@ namespace SupplyShopModels
 
         public override string ToString()
         {
-            string Items = $@"{itemId}
-{itemPrice}
-{itemQuanity}
-{itemName}";
+            string Items = $@"Item Id: {itemId}
+Item Price: ${itemPrice}
+Item Quantity: {itemQuanity}
+Item Name: {itemName}";
             return Items;     
             
             }

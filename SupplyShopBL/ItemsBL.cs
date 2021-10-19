@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using SupplyShopModels; 
 using SupplyShopDL;
-
+using System.Linq;
 
 namespace SupplyShopBL
 {
@@ -36,11 +36,11 @@ namespace SupplyShopBL
                 return listOfItems;
             }
 
-          
+        public List<Items> GetItems(string p_itemName)
+        {
+             List<Items>listOfCustomers = _repo.GetAllItems();
 
-            
-
-
-
+                return listOfCustomers.Where(cust => cust.itemName.ToUpper().Contains(p_itemName.ToUpper())).ToList();
+        }
     }
 }

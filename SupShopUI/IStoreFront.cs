@@ -11,12 +11,13 @@ namespace SupShopUI
 
         //product and inventory
         MainInventory,
-        EnterInventory,
+        
        
         ShowProduct,
 
 
         //customer choices 
+        SearchResult,
          NewCustomer,
         SearchCustomer,
         ShowCustomers,

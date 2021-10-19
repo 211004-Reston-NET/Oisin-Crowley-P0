@@ -15,5 +15,8 @@ namespace SupplyShopBL
 /// <param name="p_cust"> this is the customer we are adding </param>
 /// <returns></returns>
         Customers AddCustomer(Customers p_cust);
+
+       List<Customers>GetCustomers(string p_Name);
+
     }
 }

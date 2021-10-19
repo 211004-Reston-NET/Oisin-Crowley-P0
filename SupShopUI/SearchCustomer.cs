@@ -8,7 +8,7 @@ namespace SupShopUi
 {
     public class SearchCustomer : IStoreFront
     {
-        
+        public static string _findcustname;
         private static Customers _cust = new Customers();
         private ICustomersBL _custBL;
 
@@ -22,23 +22,8 @@ namespace SupShopUi
         
         public void Display()
         {
-            Console.WriteLine("Search for a customer");
-            List<Customers> customerList = _custBL.GetAllCustomers();
-            string userChoice = Console.ReadLine();
-
-            foreach (Customers customer in customerList)
-            {
-                if( customer.Name == userChoice )
-                {
-                    Console.WriteLine(customer);
-                }
-                else
-                {
-                    Console.WriteLine("No Match Found");
-                    
-                }
-            }
-            
+          Console.WriteLine("[1] To enter the name of the customer you want to search for.");
+            Console.WriteLine("[0] To go back. ");
         }
 
         public DirectoryChoice YourChoice()
@@ -47,7 +32,10 @@ namespace SupShopUi
             switch(userChoice)
             {
                 case "1":
-                return DirectoryChoice.SearchCustomer;
+                    Console.WriteLine("Enter the name of the customer you want to find");
+                    _findcustname = Console.ReadLine();
+                    return DirectoryChoice.SearchResult;
+                
                 case "0":
                 return DirectoryChoice.StoreFront;
                 default:
