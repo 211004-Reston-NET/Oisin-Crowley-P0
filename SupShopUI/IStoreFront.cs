@@ -12,7 +12,8 @@ namespace SupShopUI
         //product and inventory
         MainInventory,
         
-       
+       ProdSearchResult,
+       ProductSearch,
         ShowProduct,
 
 

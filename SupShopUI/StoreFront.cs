@@ -15,6 +15,7 @@ namespace SupShopUI
             Console.WriteLine("[3] Enter Customer Information");
             Console.WriteLine("[4] View Products.");
             Console.WriteLine("[5] Search for a customer");
+            Console.WriteLine("[6] Search for a Product");
             Console.WriteLine("0 - Exit the Store");
         }
 
@@ -34,6 +35,8 @@ namespace SupShopUI
                 return DirectoryChoice.ShowProduct;
                 case "5":
                 return DirectoryChoice.SearchCustomer;
+                case "6": 
+                return DirectoryChoice.ProductSearch;
                 case "0":
                 return DirectoryChoice.Exit;
                 default:

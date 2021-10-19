@@ -28,6 +28,14 @@ namespace SupShopUI
                     page = new StoreFloor();
                     break;
 
+                    case DirectoryChoice.ProductSearch:
+                    page = new ProductSearch(new ItemsBL(new Repository()));
+                    break;
+
+                    case DirectoryChoice.ProdSearchResult:
+                    page = new ProdSearchResult(new ItemsBL(new Repository()));
+                    break;
+
 
                     case DirectoryChoice.MainInventory:
                     page = new MainInventory(new ItemsBL(new Repository()));
