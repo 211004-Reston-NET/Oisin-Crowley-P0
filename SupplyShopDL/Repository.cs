@@ -8,12 +8,8 @@ namespace  SupplyShopDL
 {
     public class Repository
     {
-        private const string _filepath ="./../SupplyShopDL/Database/Customers.json";
-        private const string _SfFilepath ="./../SupplyShopDL/Database/StoreFront.json";
-
-        private const string _ItFilepath ="./../SupplyShopDL/Database/Items.json";
-
-        private const string _Ofilepath ="./../SupplyShopDL/Database/Orders.json";
+        private const string _filepath ="./../SupplyShopDL/Database/";
+        
 
         private string _jsonString;
 
@@ -26,14 +22,14 @@ namespace  SupplyShopDL
             _jsonString = JsonSerializer.Serialize(listOfCustomer, new JsonSerializerOptions{WriteIndented = true});
 
 
-            File.WriteAllText(_filepath,_jsonString);
+            File.WriteAllText(_filepath + "Customers.json",_jsonString);
 
             return p_cust;
         }
  public List<Customers> GetAllCustomers()
         {
                 //  going to read all the customers.json file and conver it to a string to be interp
-            _jsonString = File.ReadAllText(_filepath);
+            _jsonString = File.ReadAllText(_filepath + "Customers.json");
 
 
             //we are converting from a string to an object 
@@ -51,13 +47,15 @@ namespace  SupplyShopDL
 
              _jsonString = JsonSerializer.Serialize(listofStores, new JsonSerializerOptions{WriteIndented = true});
 
+             File.WriteAllText(_filepath + "StoreFront.json",_jsonString);
+
              return p_store;
         }
         
         //getting all store fronts        
         public List<StoreFront> GetStoreFronts()
         {
-            _jsonString = File.ReadAllText(_SfFilepath);
+            _jsonString = File.ReadAllText(_filepath + "StoreFront.json");
 
             return JsonSerializer.Deserialize<List<StoreFront>>(_jsonString);
         }
@@ -71,7 +69,7 @@ namespace  SupplyShopDL
 
              _jsonString = JsonSerializer.Serialize(listofItems, new JsonSerializerOptions{WriteIndented = true});
 
-             File.WriteAllText(_ItFilepath,_jsonString);
+             File.WriteAllText(_filepath + "Items.json",_jsonString);
 
              return p_items;
         }
@@ -79,7 +77,7 @@ namespace  SupplyShopDL
         //getting all Items        
         public List<Items> GetAllItems()
         {
-            _jsonString = File.ReadAllText(_ItFilepath);
+            _jsonString = File.ReadAllText(_filepath + "Items.json");
 
             return JsonSerializer.Deserialize<List<Items>>(_jsonString);
         }
@@ -92,13 +90,13 @@ namespace  SupplyShopDL
 
              _jsonString = JsonSerializer.Serialize(listofOrders, new JsonSerializerOptions{WriteIndented = true});
 
-             File.WriteAllText(_Ofilepath,_jsonString);
+             File.WriteAllText(_filepath + "Orders.json",_jsonString);
 
              return p_orders;
         }
         public List<Orders> GetAllOrders()
         {
-            _jsonString = File.ReadAllText(_Ofilepath);
+            _jsonString = File.ReadAllText(_filepath + "Orders.json");
 
             return JsonSerializer.Deserialize<List<Orders>>(_jsonString);
         }

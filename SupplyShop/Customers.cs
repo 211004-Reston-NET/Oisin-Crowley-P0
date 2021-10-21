@@ -16,6 +16,17 @@ namespace SupplyShopModels
            get { return _name; }
            set { _name = value; }
        }
+
+/// <summary>
+/// street address 
+/// </summary>
+       private string _streetAdd;
+       public string StreetAdd
+       {
+           get { return _streetAdd; }
+           set { _streetAdd = value; }
+       }
+       
        
         private string _city;
         public string City
@@ -67,6 +78,7 @@ namespace SupplyShopModels
           public override string ToString()
         {
             string Customers = $@"Name: {Name}
+Street Address: {StreetAdd}
 City: {City}
 State: {State}
 Email : {Email}

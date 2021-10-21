@@ -24,7 +24,7 @@ namespace SupShopUI
                 //this will return inventory and do something
                     return DirectoryChoice.ShowProduct;
                 case "2":
-                    return DirectoryChoice.StoreFront;
+                    return DirectoryChoice.StoreFrontMain;
                 case "0":
                     return DirectoryChoice.Exit;
                     default:

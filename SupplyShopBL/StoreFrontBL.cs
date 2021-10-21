@@ -6,7 +6,7 @@ using SupplyShopDL;
 
 namespace SupplyShopBL
 {
-    public class StoreFrontBL 
+    public class StoreFrontBL : IStoreFrontBL
     {
         /// <summary>
         /// repository init to _repo 
@@ -27,7 +27,7 @@ namespace SupplyShopBL
             return _repo.AddStoreFront(p_store);
         }
 
-        public List<StoreFront>GetStoreFronts()
+        public List<StoreFront> GetStoreFronts()
         {
             List<StoreFront>listAllStoreFront = _repo.GetStoreFronts();
 

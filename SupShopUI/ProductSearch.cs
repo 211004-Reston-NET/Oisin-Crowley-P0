@@ -4,7 +4,7 @@ using SupplyShopModels;
 using SupplyShopBL;
 using System.Collections.Generic;
 
-namespace SupShopUi
+namespace SupShopUI
 {
     public class ProductSearch : IStoreFront
     {
@@ -37,7 +37,7 @@ namespace SupShopUi
                     return DirectoryChoice.ProdSearchResult;
                 
                 case "0":
-                return DirectoryChoice.StoreFront;
+                return DirectoryChoice.StoreFrontMain;
                 default:
                 Console.WriteLine("Please Enter a valid Choice");
                 Console.ReadLine();

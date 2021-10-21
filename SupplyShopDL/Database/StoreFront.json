@@ -1,1 +1,8 @@
-[]
+[{
+    "StoreName": "Supply Shop",
+    "StreetAdd": "122 Funny Av",
+    "City": "Atlanta",
+    "State": "Georgia",
+    "itemList": "Pens",
+    "OrderList": "3"
+}]

@@ -11,7 +11,7 @@ namespace SupplyShopModels
       
         public string itemName { get; set; }
 
-        public int itemQuanity {get ; set;}
+        public int orderQuanity {get ; set;}
         public int totalPrice { get; set; } 
 
         public string storeLocation { get; set; }   

@@ -1,7 +1,7 @@
 ﻿using System;
 using SupplyShopBL;
 using SupplyShopDL;
-using SupShopUi;
+
 
 namespace SupShopUI
 {
@@ -11,7 +11,9 @@ namespace SupShopUI
         {
             bool repeat = true;
 
-            IStoreFront page = new StoreFront();
+            IMenuFactory factory = new MenuFactory();
+
+            IStoreFront page = factory.GetMenu(DirectoryChoice.StoreFrontMain);
 
             while (repeat)
             {
@@ -21,62 +23,18 @@ namespace SupShopUI
                 page.Display();
                 DirectoryChoice currentPage = page.YourChoice();
 
-                switch(currentPage)
+                if (currentPage == DirectoryChoice.Exit)
                 {
-                    case DirectoryChoice.StoreFloor:
-
-                    page = new StoreFloor();
-                    break;
-
-                    case DirectoryChoice.ProductSearch:
-                    page = new ProductSearch(new ItemsBL(new Repository()));
-                    break;
-
-                    case DirectoryChoice.ProdSearchResult:
-                    page = new ProdSearchResult(new ItemsBL(new Repository()));
-                    break;
-
-
-                    case DirectoryChoice.MainInventory:
-                    page = new MainInventory(new ItemsBL(new Repository()));
-                    break;
-
-                    case DirectoryChoice.NewCustomer:
-                    page = new NewCustomer(new CustomersBL(new Repository()));
-                    break;
-                    
-                    case DirectoryChoice.ShowCustomers:
-                    page = new ShowCustomers(new CustomersBL(new Repository()));
-                    break;
-                    case DirectoryChoice.ShowProduct:
-                    page = new ShowProduct(new ItemsBL(new Repository()));
-                    break;
-                    case DirectoryChoice.SearchCustomer:
-                    page = new SearchCustomer(new CustomersBL(new Repository()));
-                    break;
-                    case DirectoryChoice.SearchResult:
-                    page = new SearchResult(new CustomersBL(new Repository()));
-                    break;
-
-                    case DirectoryChoice.StoreFront:
-                    page = new StoreFront();
-                    break;
-
-                    //exit the store 
-                    case DirectoryChoice.Exit:
-
-                    Console.WriteLine("Thank you for visiting the Store");
-                    Console.WriteLine("You are exiting the application");
-                    Console.WriteLine("Press Enter to Continue");
+                    Console.WriteLine("You are exiting the application!");
+                    Console.WriteLine("Press enter to continue");
                     Console.ReadLine();
                     repeat = false;
-                    break;
-
-                    default: 
-                    Console.WriteLine("You forgot to add a page that should be here");
-                    repeat = false;
-                    break;
                 }
+                else
+                {
+                    page = factory.GetMenu(currentPage);
+                }
+
 
 
 
@@ -93,13 +51,13 @@ namespace SupShopUI
 
 
         }
-        }
-        }
-            
-        
+    }
+}
 
-        
-        
-        
-    
+
+
+
+
+
+
 

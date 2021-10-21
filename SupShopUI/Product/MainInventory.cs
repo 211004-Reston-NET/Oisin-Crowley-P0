@@ -131,7 +131,7 @@ namespace SupShopUI
                     return DirectoryChoice.MainInventory;
                     
                 case "0":
-                    return DirectoryChoice.StoreFront;
+                    return DirectoryChoice.StoreFrontMain;
                     default:
                     Console.WriteLine("Please enter a valid choice");
                     Console.WriteLine("Press enter to continue");

@@ -2,7 +2,7 @@ using SupplyShopBL;
 using SupplyShopModels;
 using System.Collections.Generic;
 using System;
-using SupShopUi;
+
 
 namespace SupShopUI
 {
@@ -39,7 +39,7 @@ namespace SupShopUI
            switch(userChoice)
            {
                case "0":
-               return DirectoryChoice.SearchCustomer;
+               return DirectoryChoice.ProductSearch;
                default:
                Console.WriteLine("Please enter a valid response");
                Console.WriteLine("Press enter to continue");

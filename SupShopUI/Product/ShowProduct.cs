@@ -34,7 +34,7 @@ namespace SupShopUI
             switch(userChoice)
             {
                 case "0":
-                return DirectoryChoice.StoreFront;
+                return DirectoryChoice.StoreFrontMain;
                 default:
                 Console.WriteLine("Please input a valid choice");
                 Console.WriteLine("Press Enter to Continue");

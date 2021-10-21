@@ -5,6 +5,7 @@ namespace SupShopUI
        
 
        //showing store location choices
+       ShowStoreFront,
         StoreFloor,
         //close application
         Exit,
@@ -15,6 +16,7 @@ namespace SupShopUI
        ProdSearchResult,
        ProductSearch,
         ShowProduct,
+        ProductPage,
 
 
         //customer choices 
@@ -22,8 +24,14 @@ namespace SupShopUI
          NewCustomer,
         SearchCustomer,
         ShowCustomers,
+        CustomerPage,
+
+        //orders
+        AddOrder,
+
+
         //initial page
-        StoreFront
+        StoreFrontMain
     }
 
     public interface IStoreFront
