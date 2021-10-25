@@ -27,7 +27,6 @@ namespace SupplyShopBL
             }
 
         
-
         public List<Orders> GetAllOrders()
             {
                 List<Orders>listOfOrders = _repo.GetAllOrders();
