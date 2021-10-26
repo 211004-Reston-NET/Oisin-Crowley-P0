@@ -18,6 +18,8 @@ namespace SupShopUI
         ShowProduct,
         ProductPage,
 
+        UpdateProd,
+
 
         //customer choices 
         SearchResult,

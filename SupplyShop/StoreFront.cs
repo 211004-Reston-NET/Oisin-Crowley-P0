@@ -5,13 +5,19 @@ namespace SupplyShopModels
 {
     public class StoreFront
     {
-        public string StoreName { get; set; }
+        private string _storename;
+        public string StoreName
+        {
+            get { return _storename; }
+            set { _storename = value; }
+        }
+        
 
-      private string streetAdd;
+      private string _streetAdd;
       public string StreetAdd
       {
-          get { return streetAdd; }
-          set { streetAdd = value; }
+          get { return _streetAdd; }
+          set { _streetAdd = value; }
       }
       
         
@@ -20,9 +26,23 @@ namespace SupplyShopModels
 
         public string State { get; set; }
 
+        private int _zip;
+        public int Zip
+        {
+            get { return _zip; }
+            set { _zip = value; }
+        }
+        
+
         public string itemList { get; set; }
 
-        public string OrderList { get; set; }
+        private int _orderid;
+        public int OrderID
+        {
+            get { return _orderid; }
+            set { _orderid = value; }
+        }
+        
 
              public override string ToString()
         {
@@ -30,8 +50,9 @@ namespace SupplyShopModels
 Street Address: {StreetAdd}
 City: {City}
 State: {State}
+Zip: {Zip}
 Items : {itemList}
-Orders : {OrderList}";
+Orders : {OrderID}";
             return Stores;     
             
             }

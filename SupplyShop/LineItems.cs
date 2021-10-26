@@ -14,12 +14,7 @@ namespace SupplyShop
             }
         
         }
-       private string _itemName;
-       public string ItemName
-       {
-           get { return _itemName; }
-           set { _itemName = value; }
-       }
+       
 
        private int _quantity;
        public int Quantity
@@ -27,6 +22,22 @@ namespace SupplyShop
            get { return _quantity; }
            set { _quantity = value; }
        }
+
+       private int _productID;
+       public int ProductID
+       {
+           get { return _productID; }
+           set { _productID = value; }
+       }
+
+       private int _ordersID;
+       public int OrdersID
+       {
+           get { return _ordersID; }
+           set { _ordersID = value; }
+       }
+       
+       
        
        
     }

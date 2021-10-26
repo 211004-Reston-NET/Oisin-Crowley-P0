@@ -38,9 +38,10 @@ namespace SupplyShopBL
 
         public List<Items> GetItems(string p_itemName)
         {
-             List<Items>listOfCustomers = _repo.GetAllItems();
+             List<Items>listOfitems = _repo.GetAllItems();
 
-                return listOfCustomers.Where(cust => cust.itemName.ToUpper().Contains(p_itemName.ToUpper())).ToList();
+                return listOfitems.Where(items => items.itemName.ToUpper().Contains(p_itemName.ToUpper())).ToList();
         }
-    }
-}
+
+       
+}}

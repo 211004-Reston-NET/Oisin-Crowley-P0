@@ -9,7 +9,14 @@ namespace SupplyShopModels
     {
 
         //fields for customer information 
-       // public int CustomerID {get; set;}
+       private int _customerid;
+       public int CustomerID
+       {
+           get { return _customerid; }
+           set { _customerid = value; }
+       }
+       
+       
        private string _name;
        public string Name
        {
@@ -72,7 +79,13 @@ namespace SupplyShopModels
             }
         }
 
-//       public List<Orders> OrderList {get; set;}
+            private int _orderid;
+            public int OrderID
+            {
+                get { return _orderid; }
+                set { _orderid = value; }
+            }
+            
         
 
           public override string ToString()
