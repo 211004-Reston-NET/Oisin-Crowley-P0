@@ -5,7 +5,7 @@ namespace SupplyShopBL
 {
     public interface IStoreFrontBL 
     {
-        List<StoreFront> GetStoreFronts();
+        List<StoreFront> GetAllStores();
 
         StoreFront AddStoreFront (StoreFront p_store);
         

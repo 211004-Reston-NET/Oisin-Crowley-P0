@@ -9,10 +9,10 @@ namespace SupplyShopBL
     public class ItemsBL : IItemsBL
     {
 
-            private Repository _repo;
+            private IRepository _repo;
 
                 //passing the  repo object p_repo
-            public ItemsBL(Repository p_repo)
+            public ItemsBL(IRepository p_repo)
             {
 
                 //setting private repository to pub
@@ -43,5 +43,15 @@ namespace SupplyShopBL
                 return listOfitems.Where(items => items.itemName.ToUpper().Contains(p_itemName.ToUpper())).ToList();
         }
 
-       
-}}
+        public Items GetProductbyID(int p_id)
+        {
+            Items itemsFound = _repo.GetProductbyID(p_id);
+
+            if (itemsFound == null)
+            {
+                throw new Exception("Product was not found in inventory!");
+            }
+            return itemsFound;
+        }
+    }
+}

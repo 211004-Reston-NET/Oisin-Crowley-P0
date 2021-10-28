@@ -10,5 +10,7 @@ namespace SupplyShopBL
         Items AddItems (Items p_items);
         
         List<Items> GetItems(string p_itemName);
+
+        Items GetProductbyID (int p_id);
     }
 }

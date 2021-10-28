@@ -11,13 +11,13 @@ namespace SupplyShopBL
         /// <summary>
         /// repository init to _repo 
         /// </summary>
-        private Repository _repo;
+        private IRepository _repo;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="p_repo">param of p_repo from _repo</param>
-        public StoreFrontBL(Repository p_repo)
+        public StoreFrontBL(IRepository p_repo)
         {
             _repo = p_repo;
         }
@@ -27,9 +27,9 @@ namespace SupplyShopBL
             return _repo.AddStoreFront(p_store);
         }
 
-        public List<StoreFront> GetStoreFronts()
+        public List<StoreFront> GetAllStores()
         {
-            List<StoreFront>listAllStoreFront = _repo.GetStoreFronts();
+            List<StoreFront>listAllStoreFront = _repo.GetAllStores();
 
             return listAllStoreFront;
         }

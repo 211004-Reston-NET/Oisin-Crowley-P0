@@ -8,7 +8,7 @@ namespace SupShopUI
 {
     public class SearchCustomer : IStoreFront
     {
-        public static string _findcustname;
+        public static Customers _findcust;
         private static Customers _cust = new Customers();
         private ICustomersBL _custBL;
 
@@ -33,7 +33,7 @@ namespace SupShopUI
             {
                 case "1":
                     Console.WriteLine("Enter the name of the customer you want to find");
-                    _findcustname = Console.ReadLine();
+                    _findcust.Name = Console.ReadLine();
                     return DirectoryChoice.SearchResult;
                 
                 case "0":

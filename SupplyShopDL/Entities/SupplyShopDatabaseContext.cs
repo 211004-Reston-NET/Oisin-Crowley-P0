@@ -19,6 +19,7 @@ namespace SupplyShopDL.Entities
 
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<LineItem> LineItems { get; set; }
+        public virtual DbSet<LineItemOrderJoin> LineItemOrderJoins { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Storefront> Storefronts { get; set; }
@@ -64,13 +65,6 @@ namespace SupplyShopDL.Entities
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("Customer_Name");
-
-                entity.Property(e => e.OrdersId).HasColumnName("OrdersID");
-
-                entity.HasOne(d => d.Orders)
-                    .WithMany(p => p.Customers)
-                    .HasForeignKey(d => d.OrdersId)
-                    .HasConstraintName("FK_OrdersID");
             });
 
             modelBuilder.Entity<LineItem>(entity =>
@@ -84,12 +78,38 @@ namespace SupplyShopDL.Entities
                 entity.HasOne(d => d.Orders)
                     .WithMany(p => p.LineItems)
                     .HasForeignKey(d => d.OrdersId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("frk_OrdersID");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.LineItems)
                     .HasForeignKey(d => d.ProductId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("frk_ProductID");
+            });
+
+            modelBuilder.Entity<LineItemOrderJoin>(entity =>
+            {
+                entity.HasKey(e => e.LioId)
+                    .HasName("primary_key_LIO_ID");
+
+                entity.ToTable("LineItem_Order_Join");
+
+                entity.Property(e => e.LioId).HasColumnName("LIO_ID");
+
+                entity.Property(e => e.OrdersId).HasColumnName("OrdersID");
+
+                entity.HasOne(d => d.LineItem)
+                    .WithMany(p => p.LineItemOrderJoins)
+                    .HasForeignKey(d => d.LineItemId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("forek_lineItemId");
+
+                entity.HasOne(d => d.Orders)
+                    .WithMany(p => p.LineItemOrderJoins)
+                    .HasForeignKey(d => d.OrdersId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("forek_OrdersID");
             });
 
             modelBuilder.Entity<Order>(entity =>
@@ -99,12 +119,20 @@ namespace SupplyShopDL.Entities
 
                 entity.Property(e => e.OrdersId).HasColumnName("OrdersID");
 
+                entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
+
                 entity.Property(e => e.ItemName)
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("itemName");
 
                 entity.Property(e => e.StoreId).HasColumnName("StoreID");
+
+                entity.HasOne(d => d.Customer)
+                    .WithMany(p => p.Orders)
+                    .HasForeignKey(d => d.CustomerId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_CustomerID");
 
                 entity.HasOne(d => d.LineItem)
                     .WithMany(p => p.OrdersNavigation)

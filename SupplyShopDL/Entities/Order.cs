@@ -9,7 +9,7 @@ namespace SupplyShopDL.Entities
     {
         public Order()
         {
-            Customers = new HashSet<Customer>();
+            LineItemOrderJoins = new HashSet<LineItemOrderJoin>();
             LineItems = new HashSet<LineItem>();
             Storefronts = new HashSet<Storefront>();
         }
@@ -19,10 +19,12 @@ namespace SupplyShopDL.Entities
         public int? StoreId { get; set; }
         public double? TotalPrice { get; set; }
         public int? LineItemId { get; set; }
+        public int CustomerId { get; set; }
 
+        public virtual Customer Customer { get; set; }
         public virtual LineItem LineItem { get; set; }
         public virtual Storefront Store { get; set; }
-        public virtual ICollection<Customer> Customers { get; set; }
+        public virtual ICollection<LineItemOrderJoin> LineItemOrderJoins { get; set; }
         public virtual ICollection<LineItem> LineItems { get; set; }
         public virtual ICollection<Storefront> Storefronts { get; set; }
     }

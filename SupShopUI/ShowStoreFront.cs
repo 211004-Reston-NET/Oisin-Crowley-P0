@@ -16,7 +16,7 @@ namespace SupShopUI
         public void Display()
         {
             Console.WriteLine("Store  List");
-            List<StoreFront>listOfStores = _storeBL.GetStoreFronts();
+            List<StoreFront>listOfStores = _storeBL.GetAllStores();
 
             foreach (StoreFront store in listOfStores)
             {

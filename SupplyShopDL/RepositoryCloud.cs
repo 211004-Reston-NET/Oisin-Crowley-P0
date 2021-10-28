@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Model = SupplyShopModels;
 using Entity = SupplyShopDL.Entities;
 using System.Linq;
+using SupplyShopModels;
 
 namespace SupplyShopDL
 {
@@ -51,6 +52,24 @@ namespace SupplyShopDL
             return p_items;
         }
 
+        public StoreFront AddStoreFront(StoreFront p_stores)
+        {
+           _context.Storefronts.Add
+           (
+               new Entity.Storefront()
+               {
+                   StoreName = p_stores.StoreName,
+                   StoreAdd = p_stores.StreetAdd,
+                   StoreCity = p_stores.City,
+                   StoreState = p_stores.State,
+                   StoreZip = p_stores.Zip,
+               }
+           );
+           _context.SaveChanges();
+
+           return p_stores;
+        }
+
         public List<Model.Customers> GetAllCustomers()
         {
             return _context.Customers.Select(cust => new Model.Customers()
@@ -77,6 +96,36 @@ namespace SupplyShopDL
                 Category = items.Category,
                 itemId = items.ProductId
             }).ToList();
+        }
+
+        public List<StoreFront> GetAllStores()
+        {
+            return _context.Storefronts.Select(stores => new Model.StoreFront()
+            {
+                    StoreName = stores.StoreName,
+                    StreetAdd = stores.StoreAdd,
+                    City = stores.StoreCity,
+                    State = stores.StoreState,
+                    Zip = stores.StoreZip,
+                    // ProductID = stores.ProductID,
+                    // OrderID = stores.OrdersID
+                    
+
+            }).ToList();
+        }
+
+        public Items GetProductbyID(int p_id)
+        {
+            Entity.Product itemToFind = _context.Products.Find(p_id);
+            return new Model.Items(){
+                itemId = itemToFind.ProductId,
+                itemName = itemToFind.ItemName,
+                itemPrice = itemToFind.ItemPrice,
+                ItemDesc = itemToFind.ItemDesc,
+                Category = itemToFind.Category,
+                itemQuanity = itemToFind.ProdQuantity
+                
+            };
         }
     }
 }

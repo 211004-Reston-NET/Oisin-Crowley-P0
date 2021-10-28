@@ -34,15 +34,15 @@ namespace SupShopUI
                     
 
                     case DirectoryChoice.ShowStoreFront:
-                    return new ShowStoreFront(new StoreFrontBL(new Repository()));
+                    return new ShowStoreFront(new StoreFrontBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
                     
 
                     case DirectoryChoice.ProductSearch:
-                    return new ProductSearch(new ItemsBL(new Repository()));
+                    return new ProductSearch(new ItemsBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
                     
 
                     case DirectoryChoice.ProdSearchResult:
-                    return  new ProdSearchResult(new ItemsBL(new Repository()));
+                    return  new ProdSearchResult(new ItemsBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
                     
 
                     case DirectoryChoice.ProductPage:
@@ -51,15 +51,15 @@ namespace SupShopUI
 
 
                     case DirectoryChoice.MainInventory:
-                    return new MainInventory(new ItemsBL(new Repository()));
+                    return new MainInventory(new ItemsBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
                     
 
                     case DirectoryChoice.NewCustomer:
-                    return new NewCustomer(new CustomersBL(new Repository()));
+                    return new NewCustomer(new CustomersBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
                     
                     
                     case DirectoryChoice.ShowCustomers:
-                    return new ShowCustomers(new CustomersBL(new Repository()));
+                    return new ShowCustomers(new CustomersBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
                     
 
                     case DirectoryChoice.CustomerPage:
@@ -68,13 +68,13 @@ namespace SupShopUI
 
                     
                     case DirectoryChoice.ShowProduct:
-                    return new ShowProduct(new ItemsBL(new Repository()));
+                    return new ShowProduct(new ItemsBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
                     
                     case DirectoryChoice.SearchCustomer:
-                    return new SearchCustomer(new CustomersBL( new Repository()));
+                    return new SearchCustomer(new CustomersBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
                     
                     case DirectoryChoice.SearchResult:
-                    return new SearchResult(new CustomersBL(new Repository()));
+                    return new SearchResult(new CustomersBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
                     
 
                     case DirectoryChoice.StoreFrontMain:

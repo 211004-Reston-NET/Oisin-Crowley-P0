@@ -5,6 +5,13 @@ namespace SupplyShopModels
 {
     public class StoreFront
     {
+        private int _storeID;
+        public int StoreID
+        {
+            get { return _storeID; }
+            set { _storeID = value; }
+        }
+        
         private string _storename;
         public string StoreName
         {
@@ -34,7 +41,15 @@ namespace SupplyShopModels
         }
         
 
-        public string itemList { get; set; }
+        private int _productID;
+        public int ProductID
+        {
+            get { return _productID; }
+            set { _productID = value; }
+        }
+        
+
+        
 
         private int _orderid;
         public int OrderID
@@ -51,7 +66,7 @@ Street Address: {StreetAdd}
 City: {City}
 State: {State}
 Zip: {Zip}
-Items : {itemList}
+Items : {ProductID}
 Orders : {OrderID}";
             return Stores;     
             

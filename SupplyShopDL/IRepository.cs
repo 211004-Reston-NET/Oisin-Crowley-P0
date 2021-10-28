@@ -19,5 +19,11 @@ namespace SupplyShopDL
         Items AddItems(Items p_items);
 
         List<Items> GetAllItems();
+
+        List<StoreFront> GetAllStores();
+
+        StoreFront AddStoreFront(StoreFront p_stores);
+
+        Items GetProductbyID(int p_id);
     }
 }

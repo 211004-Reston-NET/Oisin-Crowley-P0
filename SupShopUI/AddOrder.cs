@@ -8,7 +8,7 @@ namespace SupShopUI
 {
     public class AddOrders : IStoreFront
     {
-        public static string _finditemname;
+        public static Items _finditem;
         private static Orders _orders = new Orders();
         private IOrdersBL _ordersBL;
 
@@ -52,18 +52,30 @@ namespace SupShopUI
                 Console.WriteLine(items);
                 Console.WriteLine("==============");
             }
+            
                 
                 return DirectoryChoice.AddOrder;
                 case "2":
-                    Console.WriteLine("Enter the name of the item ");
-                    _finditemname = Console.ReadLine();
-                    List<Items>listOfItem = _itemsBL.GetItems(_finditemname);
-                   
-                   
-                    
-                    
+                    Console.WriteLine("Enter the ID of the item ");
+                    try
+                    {
+                         _finditem.itemId = int.Parse(Console.ReadLine());
+                    }
+                    catch (System.Exception)
+                    {
+                        
+                        Console.WriteLine("Please enter a valid number only");
+                        Console.ReadLine();
+                        return DirectoryChoice.AddOrder;
+                    }
                     
                     return DirectoryChoice.AddOrder;
+                   
+                   
+                    
+                    
+                    
+                    
               
                     
                 case "0":

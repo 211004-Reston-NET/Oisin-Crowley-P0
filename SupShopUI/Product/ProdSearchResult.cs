@@ -22,7 +22,7 @@ namespace SupShopUI
         }  
         public void Display()
         {
-            List<Items>listOfItems = _itemsBL.GetItems(ProductSearch._finditemname);
+            List<Items>listOfItems = _itemsBL.GetItems(ProductSearch._finditem.itemName);
             foreach (Items items in listOfItems)
             {
                 Console.WriteLine("==============");

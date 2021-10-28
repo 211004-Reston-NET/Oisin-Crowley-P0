@@ -17,7 +17,7 @@ namespace SupplyShopDL.Entities
         public string StoreAdd { get; set; }
         public string StoreCity { get; set; }
         public string StoreState { get; set; }
-        public int? StoreZip { get; set; }
+        public int StoreZip { get; set; }
         public int? ProductId { get; set; }
         public int? OrdersId { get; set; }
 

@@ -22,7 +22,7 @@ namespace SupShopUI
         }  
         public void Display()
         {
-            List<Customers>listOfCust = _custBL.GetCustomers(SearchCustomer._findcustname);
+            List<Customers>listOfCust = _custBL.GetCustomers(SearchCustomer._findcust.Name);
             foreach (Customers cust in listOfCust)
             {
                 Console.WriteLine("==============");

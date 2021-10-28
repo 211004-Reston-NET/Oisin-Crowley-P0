@@ -8,7 +8,7 @@ namespace SupShopUI
 {
     public class ProductSearch : IStoreFront
     {
-        public static string _finditemname;
+        public static Items _finditem;
         private static Items _items = new Items();
         private IItemsBL _itemsBL;
 
@@ -33,7 +33,7 @@ namespace SupShopUI
             {
                 case "1":
                     Console.WriteLine("Enter the name of the product you want to find");
-                    _finditemname = Console.ReadLine();
+                    _finditem.itemName = Console.ReadLine();
                     return DirectoryChoice.ProdSearchResult;
                 
                 case "0":
