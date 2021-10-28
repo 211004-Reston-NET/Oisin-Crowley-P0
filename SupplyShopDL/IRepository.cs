@@ -25,5 +25,7 @@ namespace SupplyShopDL
         StoreFront AddStoreFront(StoreFront p_stores);
 
         Items GetProductbyID(int p_id);
+
+        Orders AddOrder(Orders p_orders);
     }
 }

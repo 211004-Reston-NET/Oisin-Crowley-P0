@@ -52,6 +52,24 @@ namespace SupplyShopDL
             return p_items;
         }
 
+        public Orders AddOrder(Orders p_orders)
+        {
+            _context.Orders.Add(
+                new Entity.Order()
+                {
+                    ItemName = p_orders.itemName,
+                    StoreId = p_orders.StoreId,
+                    TotalPrice = p_orders.totalPrice,
+                    LineItemId = p_orders.LineItemId,
+                    
+
+                }
+            );
+            _context.SaveChanges();
+
+            return p_orders;
+        }
+
         public StoreFront AddStoreFront(StoreFront p_stores)
         {
            _context.Storefronts.Add

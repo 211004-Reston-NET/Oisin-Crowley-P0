@@ -26,7 +26,29 @@ namespace SupplyShopModels
         public int orderQuanity {get ; set;}
         public int totalPrice { get; set; } 
 
-        public string storeLocation { get; set; }   
+        private int _storeid;
+        public int StoreId
+        {
+            get { return _storeid; }
+            set { _storeid = value; }
+        }
+
+        private int _lineitemid;
+        public int LineItemId
+        {
+            get { return _lineitemid; }
+            set { _lineitemid = value; }
+        }
+
+        private int productId;
+        public int ProductId
+        {
+            get { return productId; }
+            set { productId = value; }
+        }
+        
+        
+           
         
         
 
