@@ -7,7 +7,7 @@ namespace SupplyShopDL
 {
     public class RepositoryCloud : IRepository
     {
-        private Entity.SupplyShopDatabaseContext _context;
+       private Entity.SupplyShopDatabaseContext _context;
 
         public RepositoryCloud(Entity.SupplyShopDatabaseContext p_context)
         {
@@ -15,17 +15,17 @@ namespace SupplyShopDL
         }
         public Model.Customers AddCustomer(Model.Customers p_cust)
         {
-                _context.Customers.Add
+               _context.Customers.Add
                 (
                     new Entity.Customer()
-                    {
+                   {
                         CustomerName = p_cust.Name,
                         CustStreetAdd = p_cust.StreetAdd,
                         CustCity = p_cust.City,
                         CustState = p_cust.State,
                         CustPhone = p_cust.Phone,
-                        CustEmail = p_cust.Email
-                    }
+                       CustEmail = p_cust.Email
+                   }
                 );
                 _context.SaveChanges();
 
@@ -35,7 +35,20 @@ namespace SupplyShopDL
 
         public Model.Items AddItems(Model.Items p_items)
         {
-            throw new System.NotImplementedException();
+            _context.Products.Add
+            (
+                new Entity.Product()
+                {
+                    ItemName = p_items.itemName,
+                    ItemPrice = p_items.itemPrice,
+                    ItemDesc = p_items.ItemDesc,
+                    Category = p_items.Category,
+                    ProdQuantity = p_items.itemQuanity
+                }
+            );
+            _context.SaveChanges();
+
+            return p_items;
         }
 
         public List<Model.Customers> GetAllCustomers()
@@ -55,7 +68,15 @@ namespace SupplyShopDL
 
         public List<Model.Items> GetAllItems()
         {
-            throw new System.NotImplementedException();
+            return _context.Products.Select(items => new Model.Items()
+            {
+                itemName = items.ItemName,
+                itemPrice = items.ItemPrice,
+                itemQuanity = items.ProdQuantity,
+                ItemDesc = items.ItemDesc,
+                Category = items.Category,
+                itemId = items.ProductId
+            }).ToList();
         }
     }
 }

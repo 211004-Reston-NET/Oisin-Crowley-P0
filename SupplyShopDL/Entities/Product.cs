@@ -15,9 +15,10 @@ namespace SupplyShopDL.Entities
 
         public int ProductId { get; set; }
         public string ItemName { get; set; }
-        public double? ItemPrice { get; set; }
+        public double ItemPrice { get; set; }
         public string ItemDesc { get; set; }
         public string Category { get; set; }
+        public int ProdQuantity { get; set; }
 
         public virtual ICollection<LineItem> LineItems { get; set; }
         public virtual ICollection<Storefront> Storefronts { get; set; }

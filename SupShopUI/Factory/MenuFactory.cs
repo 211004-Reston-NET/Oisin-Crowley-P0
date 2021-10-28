@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using SupplyShopBL;
 using SupplyShopDL;
 using SupplyShopDL.Entities;
-using SupShopUI;
+
 
 namespace SupShopUI
 {
@@ -16,7 +16,7 @@ namespace SupShopUI
                 .SetBasePath(Directory.GetCurrentDirectory())//
                 .AddJsonFile("appsetting.json")//adds the appsetting.json file in our supshop ui
                 .Build(); ///builds our configuration
-                /// 
+                 
                 
                 DbContextOptions<SupplyShopDatabaseContext> options = new DbContextOptionsBuilder<SupplyShopDatabaseContext>()
                 .UseSqlServer(configuration.GetConnectionString("Reference2DB"))
@@ -24,8 +24,8 @@ namespace SupShopUI
             
             
             
-               /// creating my directory objects in the factory 
-        /// //parameter is p_menu 
+               // creating my directory objects in the factory 
+        //parameter is p_menu 
         /// 
             switch (p_menu)
             {
@@ -55,11 +55,11 @@ namespace SupShopUI
                     
 
                     case DirectoryChoice.NewCustomer:
-                    return new NewCustomer(new CustomersBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
+                    return new NewCustomer(new CustomersBL(new Repository()));
                     
                     
                     case DirectoryChoice.ShowCustomers:
-                    return new ShowCustomers(new CustomersBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
+                    return new ShowCustomers(new CustomersBL(new Repository()));
                     
 
                     case DirectoryChoice.CustomerPage:
@@ -71,10 +71,10 @@ namespace SupShopUI
                     return new ShowProduct(new ItemsBL(new Repository()));
                     
                     case DirectoryChoice.SearchCustomer:
-                    return new SearchCustomer(new CustomersBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
+                    return new SearchCustomer(new CustomersBL( new Repository()));
                     
                     case DirectoryChoice.SearchResult:
-                    return new SearchResult(new CustomersBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
+                    return new SearchResult(new CustomersBL(new Repository()));
                     
 
                     case DirectoryChoice.StoreFrontMain:

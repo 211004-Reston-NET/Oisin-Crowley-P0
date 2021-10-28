@@ -137,6 +137,8 @@ namespace SupplyShopDL.Entities
                     .HasColumnName("itemName");
 
                 entity.Property(e => e.ItemPrice).HasColumnName("itemPrice");
+
+                entity.Property(e => e.ProdQuantity).HasColumnName("prodQuantity");
             });
 
             modelBuilder.Entity<Storefront>(entity =>

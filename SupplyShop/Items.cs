@@ -12,8 +12,8 @@ namespace SupplyShopModels
             set { _itemId = value; }
         }
         
-        private int _itemPrice;
-        public int itemPrice
+        private double _itemPrice;
+        public double itemPrice
         {
             get { return _itemPrice; }
             set { _itemPrice = value; }
@@ -34,6 +34,24 @@ namespace SupplyShopModels
             get { return _itemName; }
             set { _itemName = value; }
         }
+
+      private string _itemdesc;
+      public string ItemDesc
+      {
+          get { return _itemdesc; }
+          set { _itemdesc = value; }
+      }
+
+      private string _category;
+      public string Category
+      {
+          get { return _category; }
+          set { _category = value; }
+      }
+      
+      
+       
+        
         
         
 
