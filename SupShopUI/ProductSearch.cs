@@ -8,7 +8,7 @@ namespace SupShopUI
 {
     public class ProductSearch : IStoreFront
     {
-        public static Items _finditem;
+        public static Items _finditem = new Items();
         private static Items _items = new Items();
         private IItemsBL _itemsBL;
 
@@ -41,7 +41,7 @@ namespace SupShopUI
                 default:
                 Console.WriteLine("Please Enter a valid Choice");
                 Console.ReadLine();
-                return DirectoryChoice.SearchCustomer;
+                return DirectoryChoice.ProductSearch;
             }
         }
     }

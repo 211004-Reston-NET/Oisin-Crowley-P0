@@ -61,13 +61,12 @@ namespace SupplyShopModels
 
              public override string ToString()
         {
-            string Stores = $@"Store Name: {StoreName}
+            string Stores = $@"Store ID: {StoreID}
+Store Name: {StoreName}
 Street Address: {StreetAdd}
 City: {City}
 State: {State}
-Zip: {Zip}
-Items : {ProductID}
-Orders : {OrderID}";
+Zip: {Zip}";
             return Stores;     
             
             }

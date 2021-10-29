@@ -8,6 +8,8 @@ namespace SupplyShopBL
         List<StoreFront> GetAllStores();
 
         StoreFront AddStoreFront (StoreFront p_store);
+
+        // List<StoreFront> GetStoreByID(int p_id);
         
         
     }

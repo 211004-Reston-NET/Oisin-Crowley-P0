@@ -34,6 +34,17 @@ namespace SupplyShopBL
             return listAllStoreFront;
         }
 
+        // public List<StoreFront> GetStoreByID(int p_id)
+        // {
+        //    List<StoreFront> listOfstoreFound = _repo.GetStoreByID(p_id);
+
+        //     if (listOfstoreFound == null)
+        //     {
+        //         throw new Exception("Product was not found in inventory!");
+        //     }
+        //     return listOfstoreFound;
+        // }
+
         
     }
 }

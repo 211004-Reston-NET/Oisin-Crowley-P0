@@ -11,10 +11,10 @@ namespace SupplyShopBL
 {
     public class OrdersBL : IOrdersBL
     {
-            private Repository _repo;
+            private IRepository _repo;
 
                 //passing the  repo object p_repo
-            public OrdersBL(Repository p_repo)
+            public OrdersBL(IRepository p_repo)
             {
 
                 //setting private repository to pub

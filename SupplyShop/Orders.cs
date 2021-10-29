@@ -23,8 +23,8 @@ namespace SupplyShopModels
         }
         
 
-        public int orderQuanity {get ; set;}
-        public int totalPrice { get; set; } 
+        
+        public double totalPrice { get; set; } 
 
         private int _storeid;
         public int StoreId
@@ -40,12 +40,14 @@ namespace SupplyShopModels
             set { _lineitemid = value; }
         }
 
-        private int productId;
-        public int ProductId
+        
+        private int _customerid;
+        public int CustomerID
         {
-            get { return productId; }
-            set { productId = value; }
+            get { return _customerid; }
+            set { _customerid = value; }
         }
+        
         
         
            

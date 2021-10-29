@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System;
 using SupplyShopModels;
+using SupplyShop;
 
 namespace SupplyShopDL
 {
@@ -26,6 +27,12 @@ namespace SupplyShopDL
 
         Items GetProductbyID(int p_id);
 
-        Orders AddOrder(Orders p_orders);
+        Orders AddOrders(Orders p_orders);
+
+        StoreFront GetStoreByID(int p_id);
+
+        LineItems AddLineItems(LineItems p_lineitem);
+
+         List<Orders> GetAllOrders();
     }
 }

@@ -13,6 +13,7 @@ namespace SupShopUI
             Console.WriteLine("[1] Products Information. ");
             Console.WriteLine("[2] Customer Information.");
             Console.WriteLine("[3] Store Information");
+            Console.WriteLine("[4] Order Placement" );
             Console.WriteLine("[0] - Exit the Store");
         }
 
@@ -28,6 +29,8 @@ namespace SupShopUI
                 return DirectoryChoice.CustomerPage;
                 case "3":
                 return DirectoryChoice.ShowStoreFront;
+                case "4":
+                return DirectoryChoice.AddOrder;
                 
                 case "0":
                 return DirectoryChoice.Exit;

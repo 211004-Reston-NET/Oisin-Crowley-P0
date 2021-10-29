@@ -24,6 +24,8 @@ namespace SupShopUI
                 Console.WriteLine(items);
                 Console.WriteLine("==============");
             }
+
+            Console.WriteLine("[1] To initiate an order.");
             Console.WriteLine("[0] Go Back");
         }
 
@@ -33,6 +35,9 @@ namespace SupShopUI
 
             switch(userChoice)
             {
+
+                case "1":
+                    return DirectoryChoice.AddOrder;
                 case "0":
                 return DirectoryChoice.StoreFrontMain;
                 default:

@@ -8,7 +8,7 @@ namespace SupShopUI
 {
     public class AddOrders : IStoreFront
     {
-        public static Items _finditem;
+        public static Items _finditem = new Items();
         private static Orders _orders = new Orders();
         private IOrdersBL _ordersBL;
 
@@ -21,6 +21,11 @@ namespace SupShopUI
         }
 
          private IItemsBL _itemsBL;
+
+         public AddOrders(IItemsBL p_itemsBL)
+        {
+            _itemsBL = p_itemsBL;
+        }
 
         
 
@@ -41,25 +46,21 @@ namespace SupShopUI
             string userChoice = Console.ReadLine();
             switch (userChoice)
             {
-                
                 case "1":
-                Console.WriteLine("Product List");
-                 List<Items>listOfItems = _itemsBL.GetAllItems();
-
-            foreach (Items items in listOfItems)
-            {
-                Console.WriteLine("================");
-                Console.WriteLine(items);
-                Console.WriteLine("==============");
-            }
+                return DirectoryChoice.ShowProduct;
+                
+            
+            
             
                 
-                return DirectoryChoice.AddOrder;
+                
                 case "2":
-                    Console.WriteLine("Enter the ID of the item ");
+                    Console.WriteLine("Enter the ID of the item you want to buy");
                     try
                     {
                          _finditem.itemId = int.Parse(Console.ReadLine());
+
+                        
                     }
                     catch (System.Exception)
                     {
@@ -69,7 +70,7 @@ namespace SupShopUI
                         return DirectoryChoice.AddOrder;
                     }
                     
-                    return DirectoryChoice.AddOrder;
+                    return DirectoryChoice.AddLineItem;
                    
                    
                     

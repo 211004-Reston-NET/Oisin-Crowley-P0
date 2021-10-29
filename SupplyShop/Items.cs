@@ -59,7 +59,10 @@ namespace SupplyShopModels
         {
             string Items = $@"Item Id: {itemId}
 Item Price: ${itemPrice}
-Item Name: {itemName}";
+Item Name: {itemName}
+Stock Quantity:  {itemQuanity}
+Product Category {Category}
+Description: {ItemDesc}";
             return Items;     
             
             }

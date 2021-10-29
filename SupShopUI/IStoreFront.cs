@@ -6,6 +6,7 @@ namespace SupShopUI
 
        //showing store location choices
        ShowStoreFront,
+       StoreSelect,
         StoreFloor,
         //close application
         Exit,
@@ -30,7 +31,7 @@ namespace SupShopUI
 
         //orders
         AddOrder,
-
+        AddLineItem,
 
         //initial page
         StoreFrontMain

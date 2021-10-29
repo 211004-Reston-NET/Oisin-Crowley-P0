@@ -88,10 +88,11 @@ namespace SupShopUI
                 case "7":
                 try
                 {   _custBL.AddCustomer(_cust);
+                    Console.WriteLine("Information Added");
                     return DirectoryChoice.NewCustomer;
                      
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     
                    Console.WriteLine("You must enter a value into all fields. ");

@@ -3,6 +3,7 @@ using Model = SupplyShopModels;
 using Entity = SupplyShopDL.Entities;
 using System.Linq;
 using SupplyShopModels;
+using SupplyShop;
 
 namespace SupplyShopDL
 {
@@ -52,6 +53,21 @@ namespace SupplyShopDL
             return p_items;
         }
 
+        public LineItems AddLineItems(LineItems p_lineitem)
+        {
+            _context.LineItems.Add
+            (
+                new Entity.LineItem
+                {
+                    ProductId = p_lineitem.ProductID,
+                    Quantity = p_lineitem.Quantity
+                }
+            );
+            _context.SaveChanges();
+
+            return p_lineitem;
+        }
+
         public Orders AddOrder(Orders p_orders)
         {
             _context.Orders.Add(
@@ -68,6 +84,11 @@ namespace SupplyShopDL
             _context.SaveChanges();
 
             return p_orders;
+        }
+
+        public Orders AddOrders(Orders p_orders)
+        {
+            throw new System.NotImplementedException();
         }
 
         public StoreFront AddStoreFront(StoreFront p_stores)
@@ -116,10 +137,27 @@ namespace SupplyShopDL
             }).ToList();
         }
 
+        public List<Orders> GetAllOrders()
+        {
+            return _context.Orders.Select(orders => new Model.Orders()
+            {
+                OrderID = orders.OrdersId,
+                itemName = orders.ItemName,
+                LineItemId = orders.LineItemId,
+                CustomerID = orders.CustomerId,
+                totalPrice = orders.TotalPrice,
+                StoreId = orders.StoreId,
+                
+
+                
+            }).ToList();
+        }
+
         public List<StoreFront> GetAllStores()
         {
             return _context.Storefronts.Select(stores => new Model.StoreFront()
             {
+                    StoreID = stores.StoreId,
                     StoreName = stores.StoreName,
                     StreetAdd = stores.StoreAdd,
                     City = stores.StoreCity,
@@ -145,5 +183,18 @@ namespace SupplyShopDL
                 
             };
         }
+        public StoreFront GetStoreByID(int p_id)
+        {
+            Entity.Storefront storeToFind = _context.Storefronts.Find(p_id);
+            return new Model.StoreFront(){
+                StoreID = storeToFind.StoreId,
+                StoreName = storeToFind.StoreName,
+                StreetAdd = storeToFind.StoreAdd,
+                City = storeToFind.StoreCity,
+                State = storeToFind.StoreState,
+                Zip = storeToFind.StoreZip
+            };
+        }
+        
     }
 }

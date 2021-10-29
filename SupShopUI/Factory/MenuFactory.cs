@@ -6,6 +6,7 @@ using SupplyShopDL;
 using SupplyShopDL.Entities;
 
 
+
 namespace SupShopUI
 {
     public class MenuFactory : IMenuFactory
@@ -48,6 +49,11 @@ namespace SupShopUI
                     case DirectoryChoice.ProductPage:
                     return new ProductPage();
                     
+                    case DirectoryChoice.AddOrder:
+                    return new AddOrders(new OrdersBL(new RepositoryCloud( new SupplyShopDatabaseContext(options))));
+
+                    case DirectoryChoice.AddLineItem:
+                    return new AddLineItem(new LineItemBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
 
 
                     case DirectoryChoice.MainInventory:
