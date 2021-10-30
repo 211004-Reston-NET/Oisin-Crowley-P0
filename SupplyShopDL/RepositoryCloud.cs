@@ -86,10 +86,7 @@ namespace SupplyShopDL
             return p_orders;
         }
 
-        public Orders AddOrders(Orders p_orders)
-        {
-            throw new System.NotImplementedException();
-        }
+       
 
         public StoreFront AddStoreFront(StoreFront p_stores)
         {
@@ -193,8 +190,39 @@ namespace SupplyShopDL
                 City = storeToFind.StoreCity,
                 State = storeToFind.StoreState,
                 Zip = storeToFind.StoreZip
+                
             };
         }
+
+        public List<Model.Items> GetStoreProducts(Model.StoreFront p_store)
+        {
+            return _context.Products 
+                    .Where(prod => prod.ProductId == p_store.ProductID)
+                    .Select(prod => new Model.Items(){
+                            itemId = prod.ProductId,
+                            itemName = prod.ItemName,
+                            itemPrice = prod.ItemPrice,
+                            itemQuanity = prod.ProdQuantity,
+                            Category = prod.Category,
+                            ItemDesc = prod.ItemDesc
+                    }).ToList();
+        }
         
+        // public Model.Orders PlaceOrder(Model.Customers p_customer, Model.Orders p_order)
+        // {
+
+        //     //Adding the order to the customer list of orders 
+        //     var customer = _context.Customers.First<Entity.Customer>(cust => cust.CustomerId == p_customer.CustomerID);
+        //     customer.Orders.Add(new Entity.Order()
+        //     {
+        //         CustomerId = p_order.CustomerID,
+        //         TotalPrice = p_order.totalPrice,
+        //         StoreId = p_order.StoreId,
+                
+        //     })
+
+
+        //     var order = _context.Orders.FirstOrDefault<Entity.Order>(order => order.CustomerId == p)
+        // }
     }
 }

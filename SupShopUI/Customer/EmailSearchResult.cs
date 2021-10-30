@@ -6,30 +6,37 @@ using System;
 
 namespace SupShopUI
 {
-    public class ShowStore : IStoreFront
+    public class EmailSearchResult : IStoreFront
     {
 
          
-        private static StoreFront _store = new StoreFront();
-        private IStoreFrontBL _storeBL;
+        private static Customers _cust = new Customers();
+        private ICustomersBL _custBL;
 
 
-        public ShowStore(IStoreFrontBL p_storeBL)
+        public EmailSearchResult(ICustomersBL p_custBL)
         {
-            _storeBL = p_storeBL;
+            _custBL = p_custBL;
 
 
         }  
         public void Display()
         {
-           // List<StoreFront> listOfStore = _storeBL.GetStoreProducts(StoreSelect._findStore.StoreID);
-            //foreach (StoreFront store in listOfStore)
+            List<Customers>listOfCust = _custBL.GetCustomerEmail(SearchCustomer._findcust.Email);
+
+            if (listOfCust.Count == 0)
+            {
+                Console.WriteLine("There is no result. Search Again.");
+            }
+            foreach (Customers cust in listOfCust)
             {
                 Console.WriteLine("==============");
-           //   Console.WriteLine(store);
+                Console.WriteLine(cust);
                 Console.WriteLine("===============");
             }
             Console.WriteLine("[0] Go Back");
+
+           
         }
 
         public DirectoryChoice YourChoice()
@@ -39,7 +46,7 @@ namespace SupShopUI
            switch(userChoice)
            {
                case "0":
-               return DirectoryChoice.StoreSelect;
+               return DirectoryChoice.SearchCustomer;
                default:
                Console.WriteLine("Please enter a valid response");
                Console.WriteLine("Press enter to continue");

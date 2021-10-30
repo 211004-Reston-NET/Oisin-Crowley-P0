@@ -29,6 +29,8 @@ namespace SupShopUI
         ShowCustomers,
         CustomerPage,
 
+        EmailSearchResult,
+
         //orders
         AddOrder,
         AddLineItem,

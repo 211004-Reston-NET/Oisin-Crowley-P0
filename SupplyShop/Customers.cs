@@ -48,8 +48,17 @@ namespace SupplyShopModels
         {
             get { return _state; }
             set { _state = value; }
+
+
         }
-          
+
+       private int _zip;
+       public int Zip
+       {
+           get { return _zip; }
+           set { _zip = value; }
+       }
+       
         
         private string _email;
         public string Email

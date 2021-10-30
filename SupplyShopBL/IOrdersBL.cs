@@ -7,7 +7,7 @@ namespace SupplyShopBL
     {
         List<Orders> GetAllOrders();
 
-        Orders AddOrders (Orders p_orders);
+        
 
         
     }

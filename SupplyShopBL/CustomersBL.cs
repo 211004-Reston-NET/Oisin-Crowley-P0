@@ -46,6 +46,17 @@ namespace SupplyShopBL
 
                 return listOfCustomers.Where(cust => cust.Name.ToUpper().Contains(p_Name.ToUpper())).ToList();
             }
+            /// <summary>
+            /// This is to search for customers by thie email 
+            /// </summary>
+            /// <param name="p_email">email is the search param that will be piped in</param>
+            /// <returns>should return the a single item from the list which is the item searched for. </returns>
+            public List<Customers> GetCustomerEmail(string p_email)
+            {
+                List<Customers>listofCustomersEmail = _repo.GetAllCustomers();
+
+                return listofCustomersEmail.Where(cust => cust.Email.ToUpper().Contains(p_email.ToUpper())).ToList();
+            }
 
         
     }

@@ -78,6 +78,9 @@ namespace SupShopUI
                     
                     case DirectoryChoice.SearchCustomer:
                     return new SearchCustomer(new CustomersBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
+
+                    case DirectoryChoice.EmailSearchResult:
+                    return new EmailSearchResult(new CustomersBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
                     
                     case DirectoryChoice.SearchResult:
                     return new SearchResult(new CustomersBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));

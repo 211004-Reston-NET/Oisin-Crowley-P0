@@ -27,12 +27,14 @@ namespace SupplyShopDL
 
         Items GetProductbyID(int p_id);
 
-        Orders AddOrders(Orders p_orders);
+        
 
         StoreFront GetStoreByID(int p_id);
 
         LineItems AddLineItems(LineItems p_lineitem);
 
          List<Orders> GetAllOrders();
+
+         List<Items> GetStoreProducts(StoreFront p_store);
     }
 }

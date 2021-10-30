@@ -21,10 +21,7 @@ namespace SupplyShopBL
                 _repo = p_repo;
             }
 
-            public Orders AddOrders(Orders p_orders)
-            {
-                return _repo.AddOrders(p_orders);
-            }
+            
 
         
         public List<Orders> GetAllOrders()

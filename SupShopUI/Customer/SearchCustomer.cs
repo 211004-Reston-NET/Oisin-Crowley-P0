@@ -23,6 +23,7 @@ namespace SupShopUI
         public void Display()
         {
           Console.WriteLine("[1] To enter the name of the customer you want to search for.");
+          Console.WriteLine("[2] To Search a customer by Email.");
             Console.WriteLine("[0] To go back. ");
         }
 
@@ -45,6 +46,10 @@ namespace SupShopUI
                     Console.ReadLine();
                     return DirectoryChoice.SearchCustomer;
                 }
+                case "2":
+                    Console.WriteLine("Enter the email you want to search for.");
+                    _findcust.Email = Console.ReadLine();
+                    return DirectoryChoice.EmailSearchResult;
                     
                 
                 case "0":
