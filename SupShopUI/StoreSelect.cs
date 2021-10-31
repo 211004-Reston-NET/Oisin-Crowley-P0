@@ -22,7 +22,7 @@ namespace SupShopUI
         
         public void Display()
         {
-          Console.WriteLine("[1] To select the store ID you want.");
+          Console.WriteLine("[1] To view store inventory from a specific store you want.");
             Console.WriteLine("[0] To go back. ");
         }
 
@@ -32,20 +32,22 @@ namespace SupShopUI
             switch(userChoice)
             {
                 case "1":
-                    Console.WriteLine("Please enter the Supply Shop you want to select.");
+                    Console.WriteLine("Please enter the store ID you want to select to view inventory.");
                     try
                     {
-                         _findStore.StoreID = int.Parse(Console.ReadLine());
+                         _findStore.StoreID = Int32.Parse(Console.ReadLine());
                     }
                     catch (System.Exception)
                     {
                         Console.WriteLine("please enter a valid number");
+                        Console.WriteLine("press enter to continue");
+                        Console.ReadLine();
                         return DirectoryChoice.StoreSelect;
                         
                         
                     }
                     
-                    return DirectoryChoice.StoreSelect;
+                    return DirectoryChoice.ShowStore;
                 
                 case "0":
                 return DirectoryChoice.StoreFrontMain;

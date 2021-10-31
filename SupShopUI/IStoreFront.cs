@@ -8,6 +8,8 @@ namespace SupShopUI
        ShowStoreFront,
        StoreSelect,
         StoreFloor,
+
+        ShowStore,
         //close application
         Exit,
 

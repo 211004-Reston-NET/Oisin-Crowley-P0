@@ -10,7 +10,6 @@ namespace SupplyShopDL.Entities
         public Product()
         {
             LineItems = new HashSet<LineItem>();
-            Storefronts = new HashSet<Storefront>();
         }
 
         public int ProductId { get; set; }
@@ -19,8 +18,9 @@ namespace SupplyShopDL.Entities
         public string ItemDesc { get; set; }
         public string Category { get; set; }
         public int ProdQuantity { get; set; }
+        public int StoreId { get; set; }
 
+        public virtual Storefront Store { get; set; }
         public virtual ICollection<LineItem> LineItems { get; set; }
-        public virtual ICollection<Storefront> Storefronts { get; set; }
     }
 }

@@ -22,11 +22,11 @@ namespace SupShopUI
         }  
         public void Display()
         {
-           // List<StoreFront> listOfStore = _storeBL.GetStoreProducts(StoreSelect._findStore.StoreID);
-            //foreach (StoreFront store in listOfStore)
+           List<Items> listOfItems = _storeBL.GetStoreProducts(StoreSelect._findStore);
+            foreach (Items items in listOfItems)
             {
                 Console.WriteLine("==============");
-           //   Console.WriteLine(store);
+            Console.WriteLine(items);
                 Console.WriteLine("===============");
             }
             Console.WriteLine("[0] Go Back");

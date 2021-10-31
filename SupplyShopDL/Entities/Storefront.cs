@@ -10,6 +10,7 @@ namespace SupplyShopDL.Entities
         public Storefront()
         {
             Orders = new HashSet<Order>();
+            Products = new HashSet<Product>();
         }
 
         public int StoreId { get; set; }
@@ -18,11 +19,8 @@ namespace SupplyShopDL.Entities
         public string StoreCity { get; set; }
         public string StoreState { get; set; }
         public int StoreZip { get; set; }
-        public int? ProductId { get; set; }
-        public int? OrdersId { get; set; }
 
-        public virtual Order OrdersNavigation { get; set; }
-        public virtual Product Product { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

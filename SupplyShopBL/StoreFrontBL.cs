@@ -36,21 +36,19 @@ namespace SupplyShopBL
 
         public List<Items> GetStoreProducts(StoreFront p_store)
         {
-           List<Items>listofItems = _repo.GetStoreProducts(p_store);
-
-           return listofItems;
+           return _repo.GetStoreProducts(p_store);
         }
 
-        // public List<StoreFront> GetStoreByID(int p_id)
-        // {
-        //    List<StoreFront> listOfstoreFound = _repo.GetStoreByID(p_id);
+        public StoreFront GetStoreByID(int p_id)
+        {
+           StoreFront storeFound = _repo.GetStoreByID(p_id);
 
-        //     if (listOfstoreFound == null)
-        //     {
-        //         throw new Exception("Product was not found in inventory!");
-        //     }
-        //     return listOfstoreFound;
-        // }
+            if (storeFound == null)
+            {
+                throw new Exception("Store was not found!");
+            }
+            return storeFound;
+        }
 
 
     }

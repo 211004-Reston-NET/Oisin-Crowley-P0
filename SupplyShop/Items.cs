@@ -48,6 +48,14 @@ namespace SupplyShopModels
           get { return _category; }
           set { _category = value; }
       }
+
+      private int _storeid;
+      public int StoreID
+      {
+          get { return _storeid; }
+          set { _storeid = value; }
+      }
+      
       
       
        

@@ -9,8 +9,9 @@ namespace SupShopUI
         public void Display()
         {
             Console.WriteLine("Enter inventory [1]");
-            Console.WriteLine("View Products [2]");
+            Console.WriteLine("View All Products [2]");
             Console.WriteLine("Search Products [3]");
+            Console.WriteLine("View Store Inventory [4]");
             Console.WriteLine("Go back [0]");
         }
 
@@ -25,6 +26,8 @@ namespace SupShopUI
                     return DirectoryChoice.ShowProduct;
                 case "3":
                     return DirectoryChoice.ProductSearch;
+                case "4":
+                    return DirectoryChoice.StoreSelect;
                 
                 case "0":
                 return DirectoryChoice.StoreFrontMain;

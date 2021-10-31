@@ -129,11 +129,13 @@ namespace SupplyShopDL.Entities
                 entity.HasOne(d => d.LineItem)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.LineItemId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_LineItemId");
 
                 entity.HasOne(d => d.Store)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.StoreId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_StoreID");
             });
 
@@ -159,6 +161,14 @@ namespace SupplyShopDL.Entities
                 entity.Property(e => e.ItemPrice).HasColumnName("itemPrice");
 
                 entity.Property(e => e.ProdQuantity).HasColumnName("prodQuantity");
+
+                entity.Property(e => e.StoreId).HasColumnName("StoreID");
+
+                entity.HasOne(d => d.Store)
+                    .WithMany(p => p.Products)
+                    .HasForeignKey(d => d.StoreId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fok_StoreID");
             });
 
             modelBuilder.Entity<Storefront>(entity =>
@@ -168,39 +178,29 @@ namespace SupplyShopDL.Entities
 
                 entity.Property(e => e.StoreId).HasColumnName("StoreID");
 
-                entity.Property(e => e.OrdersId).HasColumnName("OrdersID");
-
-                entity.Property(e => e.ProductId).HasColumnName("ProductID");
-
                 entity.Property(e => e.StoreAdd)
+                    .IsRequired()
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
                 entity.Property(e => e.StoreCity)
+                    .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("Store_City");
 
                 entity.Property(e => e.StoreName)
+                    .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.StoreState)
+                    .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("Store_State");
 
                 entity.Property(e => e.StoreZip).HasColumnName("Store_Zip");
-
-                entity.HasOne(d => d.OrdersNavigation)
-                    .WithMany(p => p.Storefronts)
-                    .HasForeignKey(d => d.OrdersId)
-                    .HasConstraintName("fork_OrdersID");
-
-                entity.HasOne(d => d.Product)
-                    .WithMany(p => p.Storefronts)
-                    .HasForeignKey(d => d.ProductId)
-                    .HasConstraintName("fk_ProductID");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -180,6 +180,11 @@ namespace SupplyShopDL
                 
             };
         }
+        /// <summary>
+        /// This will give specific store based on the ID 
+        /// </summary>
+        /// <param name="p_id">this is the id it will look for </param>
+        /// <returns>returns the store it has found </returns>
         public StoreFront GetStoreByID(int p_id)
         {
             Entity.Storefront storeToFind = _context.Storefronts.Find(p_id);
@@ -196,16 +201,33 @@ namespace SupplyShopDL
 
         public List<Model.Items> GetStoreProducts(Model.StoreFront p_store)
         {
-            return _context.Products 
-                    .Where(prod => prod.ProductId == p_store.ProductID)
-                    .Select(prod => new Model.Items(){
-                            itemId = prod.ProductId,
-                            itemName = prod.ItemName,
-                            itemPrice = prod.ItemPrice,
-                            itemQuanity = prod.ProdQuantity,
-                            Category = prod.Category,
-                            ItemDesc = prod.ItemDesc
-                    }).ToList();
+
+            //Query Santax 
+            var result = (from it in _context.Products
+                            where it.StoreId == p_store.StoreID
+                            select it);
+
+                //mapping the queriable <entity.items> into a list<model.items> 
+                  List<Items> listofItems = new List<Model.Items>();
+
+                 foreach (Entity.Product it in result)
+                 {
+                     listofItems.Add(new Model.Items(){
+                         itemId = it.ProductId,
+                         itemName = it.ItemName,
+                         itemQuanity = it.ProdQuantity,
+                         ItemDesc = it.ItemDesc,
+                         itemPrice = it.ItemPrice,
+                         Category = it.Category,
+                         StoreID = it.StoreId
+                         
+                     });
+                 }
+
+                 return listofItems;
+
+
+                    
         }
         
         // public Model.Orders PlaceOrder(Model.Customers p_customer, Model.Orders p_order)
