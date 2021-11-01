@@ -37,6 +37,8 @@ namespace SupShopUI
         AddOrder,
         AddLineItem,
 
+        CollectOrder,
+
         //initial page
         StoreFrontMain
     }

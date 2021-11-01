@@ -15,12 +15,7 @@ namespace SupplyShopModels
         }
         
       
-        private string _itemname;
-        public string itemName
-        {
-            get { return _itemname; }
-            set { _itemname = value; }
-        }
+        
         
 
         

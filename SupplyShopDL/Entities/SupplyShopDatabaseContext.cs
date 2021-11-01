@@ -113,11 +113,6 @@ namespace SupplyShopDL.Entities
 
                 entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
 
-                entity.Property(e => e.ItemName)
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("itemName");
-
                 entity.Property(e => e.StoreId).HasColumnName("StoreID");
 
                 entity.HasOne(d => d.Customer)

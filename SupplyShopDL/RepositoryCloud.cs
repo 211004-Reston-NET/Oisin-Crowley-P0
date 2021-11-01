@@ -73,10 +73,13 @@ namespace SupplyShopDL
             _context.Orders.Add(
                 new Entity.Order()
                 {
-                    ItemName = p_orders.itemName,
+                    
                     StoreId = p_orders.StoreId,
                     TotalPrice = p_orders.totalPrice,
                     LineItemId = p_orders.LineItemId,
+                    CustomerId = p_orders.CustomerID,
+                    
+                    
                     
 
                 }
@@ -139,7 +142,7 @@ namespace SupplyShopDL
             return _context.Orders.Select(orders => new Model.Orders()
             {
                 OrderID = orders.OrdersId,
-                itemName = orders.ItemName,
+                
                 LineItemId = orders.LineItemId,
                 CustomerID = orders.CustomerId,
                 totalPrice = orders.TotalPrice,
@@ -177,6 +180,39 @@ namespace SupplyShopDL
                 ItemDesc = itemToFind.ItemDesc,
                 Category = itemToFind.Category,
                 itemQuanity = itemToFind.ProdQuantity
+                
+            };
+        }
+
+         public Customers GetCustomerbyID(int p_id)
+        {
+            Entity.Customer custToFind = _context.Customers.Find(p_id);
+            return new Model.Customers(){
+                CustomerID = custToFind.CustomerId,
+                City = custToFind.CustCity,
+                Phone = custToFind.CustPhone,
+                Email = custToFind.CustEmail,
+                Zip = custToFind.CustZip,
+                State = custToFind.CustState,
+                StreetAdd = custToFind.CustStreetAdd
+
+
+                
+            };
+        }
+
+
+         public LineItems GetLineItembyID(int p_id)
+        {
+            Entity.LineItem LineitemToFind = _context.LineItems.Find(p_id);
+            return new LineItems(){
+                LineItemID = LineitemToFind.LineItemId,
+                ProductID = LineitemToFind.ProductId,
+                Quantity = LineitemToFind.Quantity,
+
+
+
+                
                 
             };
         }
@@ -230,21 +266,6 @@ namespace SupplyShopDL
                     
         }
         
-        // public Model.Orders PlaceOrder(Model.Customers p_customer, Model.Orders p_order)
-        // {
-
-        //     //Adding the order to the customer list of orders 
-        //     var customer = _context.Customers.First<Entity.Customer>(cust => cust.CustomerId == p_customer.CustomerID);
-        //     customer.Orders.Add(new Entity.Order()
-        //     {
-        //         CustomerId = p_order.CustomerID,
-        //         TotalPrice = p_order.totalPrice,
-        //         StoreId = p_order.StoreId,
-                
-        //     })
-
-
-        //     var order = _context.Orders.FirstOrDefault<Entity.Order>(order => order.CustomerId == p)
-        // }
+        
     }
 }

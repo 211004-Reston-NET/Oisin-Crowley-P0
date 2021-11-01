@@ -20,5 +20,7 @@ namespace SupplyShopBL
 
        List<Customers> GetCustomerEmail(string p_email);
 
+        Customers GetCustomerbyID(int p_id);
+
     }
 }

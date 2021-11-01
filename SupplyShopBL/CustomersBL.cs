@@ -56,7 +56,21 @@ namespace SupplyShopBL
                 List<Customers>listofCustomersEmail = _repo.GetAllCustomers();
 
                 return listofCustomersEmail.Where(cust => cust.Email.ToUpper().Contains(p_email.ToUpper())).ToList();
+
+
+
             }
+
+            public Customers GetCustomerbyID(int p_id)
+        {
+            Customers custFound = _repo.GetCustomerbyID(p_id);
+
+            if (custFound == null)
+            {
+                throw new Exception("Product was not found in inventory!");
+            }
+            return custFound;
+        }
 
         
     }

@@ -17,7 +17,7 @@ namespace SupplyShopDL.Entities
         public string CustStreetAdd { get; set; }
         public string CustCity { get; set; }
         public string CustState { get; set; }
-        public int? CustZip { get; set; }
+        public int CustZip { get; set; }
         public string CustEmail { get; set; }
         public string CustPhone { get; set; }
 

@@ -29,12 +29,17 @@ namespace SupplyShopBL
                 List<Orders>listOfOrders = _repo.GetAllOrders();
                 for (int i = 0; i< listOfOrders.Count; i++)
                 {
-                    listOfOrders[i].itemName = listOfOrders[i].itemName.ToUpper();
+                    listOfOrders[i].OrderID = listOfOrders[i].OrderID;
                 }
 
 
                 return listOfOrders;
             }
+
+        public Orders AddOrder(Orders p_orders)
+        {
+            return _repo.AddOrder(p_orders);
+        }
 
           
     }

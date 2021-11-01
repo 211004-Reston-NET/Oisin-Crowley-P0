@@ -13,7 +13,6 @@ namespace SupplyShopDL.Entities
         }
 
         public int OrdersId { get; set; }
-        public string ItemName { get; set; }
         public int StoreId { get; set; }
         public double TotalPrice { get; set; }
         public int LineItemId { get; set; }

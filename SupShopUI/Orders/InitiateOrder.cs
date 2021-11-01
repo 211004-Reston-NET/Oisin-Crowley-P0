@@ -6,38 +6,54 @@ using SupShopUI;
 
 namespace SupShopUI
 {
-    public class AddOrders : IStoreFront
+    public class InitiateOrder : IStoreFront
     {
-        public static Items _finditem = new Items();
-        private static Orders _orders = new Orders();
+        
+        public static Orders _orders;
         private IOrdersBL _ordersBL;
 
 
-        public AddOrders(IOrdersBL p_ordersBL)
+        public InitiateOrder(IOrdersBL p_ordersBL)
         {
             _ordersBL = p_ordersBL;
 
 
         }
+         private ICustomersBL _custBL;
 
-         private IItemsBL _itemsBL;
 
-         public AddOrders(IItemsBL p_itemsBL)
+        public InitiateOrder(ICustomersBL p_custBL)
         {
-            _itemsBL = p_itemsBL;
-        }
+            _custBL = p_custBL;
 
-        
 
-        public void Display()
+        }  
+
+         public void Display()
         {
-
+            _orders = new Orders();
             Console.WriteLine("Would you like to place an order?");
-            Console.WriteLine("[1] to view products");
-            Console.WriteLine("[2] Select an item to buy");
+            Console.WriteLine("Enter the Store ID");
+            try
+            {
+                _orders.StoreId = int.Parse(Console.ReadLine());
+            }
+            catch (System.Exception)
+            {
+                
+                Console.WriteLine("Please enter a valid number");
+            }
+            Console.WriteLine("Enter your customer ID To start your order");
+            try
+            {
+                 _orders.CustomerID = int.Parse(Console.ReadLine());
+            }
+            catch (System.Exception)
+            {
+                
+                Console.WriteLine("please enter a valid Number");
+            }
             
-            Console.WriteLine("[0] to return to store front");
-
 
 
         }
@@ -54,23 +70,7 @@ namespace SupShopUI
             
                 
                 
-                case "2":
-                    Console.WriteLine("Enter the ID of the item you want to buy");
-                    try
-                    {
-                         _finditem.itemId = int.Parse(Console.ReadLine());
-
-                        
-                    }
-                    catch (System.Exception)
-                    {
-                        
-                        Console.WriteLine("Please enter a valid number only");
-                        Console.ReadLine();
-                        return DirectoryChoice.AddOrder;
-                    }
-                    
-                    return DirectoryChoice.AddLineItem;
+                
                    
                    
                     
