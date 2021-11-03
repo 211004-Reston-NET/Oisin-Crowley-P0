@@ -26,6 +26,7 @@ namespace SupplyShopDL
                         CustCity = p_cust.City,
                         CustState = p_cust.State,
                         CustPhone = p_cust.Phone,
+                        CustZip = p_cust.Zip,
                        CustEmail = p_cust.Email
                    }
                 );
@@ -60,7 +61,8 @@ namespace SupplyShopDL
                 new Entity.LineItem
                 {
                     ProductId = p_lineitem.ProductID,
-                    Quantity = p_lineitem.Quantity
+                    Quantity = p_lineitem.Quantity,
+                    OrdersId = p_lineitem.OrdersID
                 }
             );
             _context.SaveChanges();

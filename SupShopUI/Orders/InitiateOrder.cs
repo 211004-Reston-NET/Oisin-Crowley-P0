@@ -16,45 +16,24 @@ namespace SupShopUI
         public InitiateOrder(IOrdersBL p_ordersBL)
         {
             _ordersBL = p_ordersBL;
-
+            
 
         }
-         private ICustomersBL _custBL;
+         
 
 
-        public InitiateOrder(ICustomersBL p_custBL)
-        {
-            _custBL = p_custBL;
-
-
-        }  
+        
 
          public void Display()
         {
             _orders = new Orders();
             Console.WriteLine("Would you like to place an order?");
-            Console.WriteLine("Enter the Store ID");
-            try
-            {
-                _orders.StoreId = int.Parse(Console.ReadLine());
-            }
-            catch (System.Exception)
-            {
-                
-                Console.WriteLine("Please enter a valid number");
-            }
-            Console.WriteLine("Enter your customer ID To start your order");
-            try
-            {
-                 _orders.CustomerID = int.Parse(Console.ReadLine());
-            }
-            catch (System.Exception)
-            {
-                
-                Console.WriteLine("please enter a valid Number");
-            }
+            Console.WriteLine("[1]Enter the Store ID");
             
-
+           
+            
+            Console.WriteLine();
+            Console.WriteLine("[1] to go to line items");
 
         }
         public DirectoryChoice YourChoice()
@@ -62,8 +41,20 @@ namespace SupShopUI
             string userChoice = Console.ReadLine();
             switch (userChoice)
             {
-                case "1":
-                return DirectoryChoice.ShowProduct;
+                case "1":    
+                
+                     try
+            {
+                SingletonFields._orders.StoreId = int.Parse(Console.ReadLine());
+                
+            }
+            catch (System.Exception)
+            {
+                
+                Console.WriteLine("Please enter a valid number");
+                return DirectoryChoice.InitiateOrder;
+            }
+                return DirectoryChoice.InitiateOrder;
                 
             
             

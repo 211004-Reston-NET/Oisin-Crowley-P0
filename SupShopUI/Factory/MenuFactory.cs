@@ -92,8 +92,10 @@ namespace SupShopUI
                     return new StoreSelect(new StoreFrontBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
 
                     case DirectoryChoice.CollectOrder:
-                    return new CollectOrder(new OrdersBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
-                    
+                    return new CollectOrder(new OrdersBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))),(new LineItemBL(new RepositoryCloud(new SupplyShopDatabaseContext(options)))));
+
+                    case DirectoryChoice.InitiateOrder:
+                    return new InitiateOrder(new OrdersBL(new RepositoryCloud(new SupplyShopDatabaseContext(options))));
 
                     case DirectoryChoice.StoreFrontMain:
                     return new StoreFrontMain();

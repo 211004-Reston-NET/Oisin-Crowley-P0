@@ -10,6 +10,7 @@ namespace SupplyShopDL.Entities
         public Order()
         {
             LineItemOrderJoins = new HashSet<LineItemOrderJoin>();
+            LineItems = new HashSet<LineItem>();
         }
 
         public int OrdersId { get; set; }
@@ -22,5 +23,6 @@ namespace SupplyShopDL.Entities
         public virtual LineItem LineItem { get; set; }
         public virtual Storefront Store { get; set; }
         public virtual ICollection<LineItemOrderJoin> LineItemOrderJoins { get; set; }
+        public virtual ICollection<LineItem> LineItems { get; set; }
     }
 }

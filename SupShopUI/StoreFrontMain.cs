@@ -30,7 +30,7 @@ namespace SupShopUI
                 case "3":
                 return DirectoryChoice.ShowStoreFront;
                 case "4":
-                return DirectoryChoice.AddOrder;
+                return DirectoryChoice.InitiateOrder;
                 
                 case "0":
                 return DirectoryChoice.Exit;

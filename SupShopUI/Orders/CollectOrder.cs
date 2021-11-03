@@ -9,18 +9,20 @@ namespace SupShopUI
 {
     public class CollectOrder : IStoreFront
     {
-        public static Items _finditem = new Items();
+        
         public static Orders _orders = new Orders();
 
-        public static LineItems _lineitem = new LineItems();
+        
 
         
         private IOrdersBL _ordersBL;
 
 
-        public CollectOrder(IOrdersBL p_ordersBL)
+        public CollectOrder(IOrdersBL p_ordersBL,ILineItemBL p_lineitemBL )
         {
             _ordersBL = p_ordersBL;
+
+            _lineitemBL = p_lineitemBL;
 
 
         }
@@ -28,12 +30,7 @@ namespace SupShopUI
          private ILineItemBL _lineitemBL;
 
 
-        public CollectOrder(ILineItemBL p_lineitemBL)
-        {
-            _lineitemBL = p_lineitemBL;
-
-
-        }
+    
 
         
 

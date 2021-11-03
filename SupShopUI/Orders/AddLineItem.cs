@@ -21,7 +21,8 @@ namespace SupShopUI
            _lineitem = new LineItems();
             Console.WriteLine("Line Item Order");
             Console.WriteLine("Product Quantity:" +  _lineitem.Quantity);
-            Console.WriteLine("Product Id: " + AddOrders._finditem.itemId);
+           Console.WriteLine("Product Id: " + _lineitem.ProductID);
+           Console.WriteLine("Order Id: " + InitiateOrder._orders.OrderID);
             Console.WriteLine("Enter your quantity of Order");
             try
                     {
@@ -67,11 +68,12 @@ namespace SupShopUI
                     // }
                  
                  case "2":
-                _lineitem.ProductID = AddOrders._finditem.itemId;
+               // _lineitem.ProductID = AddOrders._finditem.itemId;
                 
 
 
                 _lineitemBL.AddLineItems(_lineitem);
+                
                     Console.WriteLine("Information Added!");
                     Console.WriteLine("Press Enter to continue.");
                     Console.ReadLine();

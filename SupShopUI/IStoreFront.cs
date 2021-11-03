@@ -39,6 +39,8 @@ namespace SupShopUI
 
         CollectOrder,
 
+        InitiateOrder,
+
         //initial page
         StoreFrontMain
     }

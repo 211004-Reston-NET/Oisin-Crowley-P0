@@ -30,6 +30,14 @@ namespace SupplyShop
            set { _productID = value; }
        }
 
+       private int _ordersid;
+       public int OrdersID
+       {
+           get { return _ordersid; }
+           set { _ordersid = value; }
+       }
+       
+
        
        
        

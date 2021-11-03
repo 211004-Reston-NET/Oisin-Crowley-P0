@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace SupplyShopModels
 {
@@ -29,7 +30,25 @@ namespace SupplyShopModels
       
         
 
-        public string City { get; set; } 
+        private string _city;
+        public string City
+        {
+            get { return _city; }
+            set { 
+                        //Regex expression to only hold letters 
+                   if (!Regex.IsMatch(value, @"^[A-Za-z .]+$"))
+                {
+                    //Will give the user an exception whenever you try to set the city field with a number
+                    throw new Exception("City can only hold letters!");
+                }
+                
+                
+                
+                
+                
+                _city = value; }
+        }
+        
 
         public string State { get; set; }
 

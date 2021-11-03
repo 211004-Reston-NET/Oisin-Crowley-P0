@@ -71,7 +71,15 @@ namespace SupplyShopDL.Entities
             {
                 entity.ToTable("LineItem");
 
+                entity.Property(e => e.OrdersId).HasColumnName("OrdersID");
+
                 entity.Property(e => e.ProductId).HasColumnName("ProductID");
+
+                entity.HasOne(d => d.Orders)
+                    .WithMany(p => p.LineItems)
+                    .HasForeignKey(d => d.OrdersId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("frkey_orderID");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.LineItems)
@@ -122,7 +130,7 @@ namespace SupplyShopDL.Entities
                     .HasConstraintName("FK_CustomerID");
 
                 entity.HasOne(d => d.LineItem)
-                    .WithMany(p => p.Orders)
+                    .WithMany(p => p.OrdersNavigation)
                     .HasForeignKey(d => d.LineItemId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_LineItemId");
